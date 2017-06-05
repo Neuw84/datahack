@@ -1,0 +1,11 @@
+version: '3'
+services:
+  spark:
+    build: docker
+    ports:
+     - "8000:8000"
+     - "4400:4400"
+  redis:
+    image: "cassandra:2"
+    links:
+      - spark
