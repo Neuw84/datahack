@@ -1,0 +1,34 @@
+{
+  "paragraphs": [
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1496697321254_668737151",
+      "id": "20170605-211521_1924143267",
+      "dateCreated": "Jun 5, 2017 9:15:21 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "cassandra",
+  "id": "2CMG5YBUR",
+  "angularObjects": {
+    "2CMA4VF9D:shared_process": [],
+    "2CKRD4J9A:shared_process": [],
+    "2CMT4XYG2:shared_process": [],
+    "2CHZFBE8G:shared_process": [],
+    "2CJJ6A2T2:shared_process": [],
+    "2CJ6PW5R2:shared_process": [],
+    "2CKJAVPUU:shared_process": [],
+    "2CM7GKEMQ:shared_process": [],
+    "2CJJECAW5:shared_process": [],
+    "2CJPJMF3Z:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}
