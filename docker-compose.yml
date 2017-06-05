@@ -3,9 +3,14 @@ services:
   spark:
     build: docker
     ports:
-     - "8000:8000"
-     - "4400:4400"
-  redis:
+     - "8080:8080"
+     - "4040:4040"
+     ZEPPELIN_JAVA_OPTS: >-
+-Dcassandra.hosts=cassandra
+    volumes:
+    - ./data:/usr/zeppelin/data
+    - ./notebooks:/usr/zeppelin/notebook
+  cassandra:
     image: "cassandra:2"
     links:
       - spark
