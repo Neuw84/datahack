@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\nWelcome to Spark Datahack course\n![Spark](https://spark.apache.org/images/spark-logo-trademark.png)\n![Datahack](http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png)\n\n",
+      "text": "%md\nWelcome to Spark Datahack course\n![Spark](https://spark.apache.org/images/spark-logo-trademark.png)![Datahack](http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png)\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:41:00 PM",
+      "dateUpdated": "Jun 6, 2017 7:02:04 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -25,7 +25,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWelcome to Spark Datahack course\u003cbr/\u003e\u003cimg src\u003d\"https://spark.apache.org/images/spark-logo-trademark.png\" alt\u003d\"Spark\" /\u003e\u003cbr/\u003e\u003cimg src\u003d\"http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png\" alt\u003d\"Datahack\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWelcome to Spark Datahack course\u003cbr/\u003e\u003cimg src\u003d\"https://spark.apache.org/images/spark-logo-trademark.png\" alt\u003d\"Spark\" /\u003e\u003cimg src\u003d\"http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png\" alt\u003d\"Datahack\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -33,15 +33,15 @@
       "jobName": "paragraph_1496773400966_426901212",
       "id": "20170606-182320_455215110",
       "dateCreated": "Jun 6, 2017 6:23:20 PM",
-      "dateStarted": "Jun 6, 2017 6:41:00 PM",
-      "dateFinished": "Jun 6, 2017 6:41:00 PM",
+      "dateStarted": "Jun 6, 2017 7:02:04 PM",
+      "dateFinished": "Jun 6, 2017 7:02:04 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//old way of reading csv\r\nval bankText \u003d sc.textFile(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\ncase class Bank(age:Integer, job:String, marital : String, education : String, balance : Integer)\r\n\r\n// split each line, filter out header (starts with \"age\"), and map it into Bank case class  \r\nval bank \u003d bankText.map(s\u003d\u003es.split(\";\")).filter(s\u003d\u003es(0)!\u003d\"\\\"age\\\"\").map(\r\n    s\u003d\u003eBank(s(0).toInt, \r\n            s(1).replaceAll(\"\\\"\", \"\"),\r\n            s(2).replaceAll(\"\\\"\", \"\"),\r\n            s(3).replaceAll(\"\\\"\", \"\"),\r\n            s(5).replaceAll(\"\\\"\", \"\").toInt\r\n        )\r\n)\r\n\r\n",
+      "text": "//old way of reading csv\r\nval bankText \u003d sc.textFile(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\ncase class Bank(age:Integer, job:String, marital : String, education : String, balance : Integer)\r\n\r\n// split each line, filter out header (starts with \"age\"), and map it into Bank case class  \r\nval bank \u003d bankText.map(s\u003d\u003es.split(\";\")).filter(s\u003d\u003es(0)!\u003d\"\\\"age\\\"\").map(\r\n    s\u003d\u003eBank(s(0).toInt, \r\n            s(1).replaceAll(\"\\\"\", \"\"),\r\n            s(2).replaceAll(\"\\\"\", \"\"),\r\n            s(3).replaceAll(\"\\\"\", \"\"),\r\n            s(5).replaceAll(\"\\\"\", \"\").toInt\r\n        )\r\n)\r\n\r\n// convert to DataFrame and create temporal table\r\nbank.toDF().registerTempTable(\"bank\")\r\n\r\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:30 PM",
+      "dateUpdated": "Jun 6, 2017 7:02:19 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -61,7 +61,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nbankText: org.apache.spark.rdd.RDD[String] \u003d /usr/zeppelin/data/bank/bank-full.csv MapPartitionsRDD[177] at textFile at \u003cconsole\u003e:28\n\ndefined class Bank\n\nbank: org.apache.spark.rdd.RDD[Bank] \u003d MapPartitionsRDD[180] at map at \u003cconsole\u003e:31\n"
+            "data": "\nbankText: org.apache.spark.rdd.RDD[String] \u003d /usr/zeppelin/data/bank/bank-full.csv MapPartitionsRDD[58] at textFile at \u003cconsole\u003e:28\n\ndefined class Bank\n\nbank: org.apache.spark.rdd.RDD[Bank] \u003d MapPartitionsRDD[61] at map at \u003cconsole\u003e:31\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
           }
         ]
       },
@@ -69,15 +69,15 @@
       "jobName": "paragraph_1496696452676_1189682229",
       "id": "20170605-210052_1887255984",
       "dateCreated": "Jun 5, 2017 9:00:52 PM",
-      "dateStarted": "Jun 6, 2017 6:34:30 PM",
-      "dateFinished": "Jun 6, 2017 6:34:33 PM",
+      "dateStarted": "Jun 6, 2017 7:01:52 PM",
+      "dateFinished": "Jun 6, 2017 7:01:56 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md \nAge distribution from bank",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:52 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -105,15 +105,15 @@
       "jobName": "paragraph_1496773887064_1662250020",
       "id": "20170606-183127_1953703662",
       "dateCreated": "Jun 6, 2017 6:31:27 PM",
-      "dateStarted": "Jun 6, 2017 6:34:31 PM",
-      "dateFinished": "Jun 6, 2017 6:34:31 PM",
+      "dateStarted": "Jun 6, 2017 7:01:52 PM",
+      "dateFinished": "Jun 6, 2017 7:01:52 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql select age, count(1) from bank where age \u003c 30 group by age order by age\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:52 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -150,15 +150,15 @@
       "jobName": "paragraph_1496774000194_397534413",
       "id": "20170606-183320_2108168495",
       "dateCreated": "Jun 6, 2017 6:33:20 PM",
-      "dateStarted": "Jun 6, 2017 6:34:31 PM",
-      "dateFinished": "Jun 6, 2017 6:34:36 PM",
+      "dateStarted": "Jun 6, 2017 7:01:52 PM",
+      "dateFinished": "Jun 6, 2017 7:01:59 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nAge distribution with certain marital status\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:52 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -186,15 +186,15 @@
       "jobName": "paragraph_1496774040806_940677267",
       "id": "20170606-183400_176056686",
       "dateCreated": "Jun 6, 2017 6:34:00 PM",
-      "dateStarted": "Jun 6, 2017 6:34:31 PM",
-      "dateFinished": "Jun 6, 2017 6:34:31 PM",
+      "dateStarted": "Jun 6, 2017 7:01:53 PM",
+      "dateFinished": "Jun 6, 2017 7:01:53 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\nselect age, count(1) from bank where marital\u003d\"${marital\u003dsingle,single|divorced|married}\" group by age order by age\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:34 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:53 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -251,15 +251,15 @@
       "jobName": "paragraph_1496773677409_-236022787",
       "id": "20170606-182757_1365789518",
       "dateCreated": "Jun 6, 2017 6:27:57 PM",
-      "dateStarted": "Jun 6, 2017 6:34:34 PM",
-      "dateFinished": "Jun 6, 2017 6:34:38 PM",
+      "dateStarted": "Jun 6, 2017 7:01:57 PM",
+      "dateFinished": "Jun 6, 2017 7:02:02 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "//spark 2.1 way of reading csv files\r\nval df \u003d spark.read\r\n        .format(\"csv\")\r\n        .option(\"header\", \"true\") //reading the headers\r\n        .option(\"mode\", \"DROPMALFORMED\")\r\n        .csv(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:53 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -287,14 +287,14 @@
       "jobName": "paragraph_1496773080624_-1626764179",
       "id": "20170606-181800_315918021",
       "dateCreated": "Jun 6, 2017 6:18:00 PM",
-      "dateStarted": "Jun 6, 2017 6:34:36 PM",
-      "dateFinished": "Jun 6, 2017 6:34:39 PM",
+      "dateStarted": "Jun 6, 2017 7:02:00 PM",
+      "dateFinished": "Jun 6, 2017 7:02:03 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "user": "anonymous",
-      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "dateUpdated": "Jun 6, 2017 7:01:53 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -318,19 +318,19 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "Spark basic",
+  "name": "Spark Intro",
   "id": "2CK9JKVJW",
   "angularObjects": {
-    "2CMA4VF9D:shared_process": [],
-    "2CKRD4J9A:shared_process": [],
-    "2CMT4XYG2:shared_process": [],
-    "2CHZFBE8G:shared_process": [],
-    "2CJJ6A2T2:shared_process": [],
-    "2CJ6PW5R2:shared_process": [],
-    "2CM7GKEMQ:shared_process": [],
-    "2CKJAVPUU:shared_process": [],
-    "2CJJECAW5:shared_process": [],
-    "2CJPJMF3Z:shared_process": []
+    "2CK32Q9UT:shared_process": [],
+    "2CMPSRQQ9:shared_process": [],
+    "2CJ8HZ4J2:shared_process": [],
+    "2CJC66HZJ:shared_process": [],
+    "2CHX8NV84:shared_process": [],
+    "2CMXNSXQU:shared_process": [],
+    "2CMBXSF5X:shared_process": [],
+    "2CH2HCRS9:shared_process": [],
+    "2CM7BVFFZ:shared_process": [],
+    "2CKXCXFVQ:shared_process": []
   },
   "config": {},
   "info": {}

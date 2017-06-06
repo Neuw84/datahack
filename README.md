@@ -1,4 +1,5 @@
-# datahack
+# Datahack
+
 Datahack spark live coding demo code
 
 ## Usage:
@@ -7,8 +8,12 @@ Datahack spark live coding demo code
 2. Modify your docker VM (increase the RAM to 4GB at least) if yoy are not in Linux
 3. git clone
 4. docker-compose up
-5. Go to http://your-docker-machine-ip:8080 
+5. Open Zeppelin at http://your-docker-machine-ip:8080 
 6. Enjoy!
 
+## Details:
 
-   
+* Spark UI can be accesed at http://your-docker-machine-ip:4040
+* Cassandra CQL native transport endpoint is at http://your-docker-machine-ip:9042 
+* Cassandra Web GUI is available at http://your-docker-machine-ip:300 
+

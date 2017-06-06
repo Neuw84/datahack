@@ -11,8 +11,24 @@ services:
      - ZEPPELIN_JAVA_OPTS=-Dcassandra.hosts=cassandra
     volumes:
     - ./data:/usr/zeppelin/data
-    - ./notebooks:/usr/zeppelin/notebook
+    - ./notebooks:/usr/zeppelin/notebook  
+    links: 
+    - cassandra
+    depends_on: 
+    - cassandra
   cassandra:
-    image: cassandra:2
-    links:
-      - spark
+  #spotify image for faster Cassandra startup
+    image: spotify/cassandra    
+    ports:
+    - "9042:9042"
+  cassandra-web:
+    image: delermando/docker-cassandra-web:v0.4.0
+    environment: 
+      - CASSANDRA_HOST_IP=192.168.99.100
+      - CASSANDRA_PORT=9042    
+    ports:
+     - "3000:3000"
+    links: 
+    - cassandra
+    depends_on: 
+    - cassandra
