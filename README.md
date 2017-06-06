@@ -7,7 +7,7 @@ Datahack spark live coding demo code
 2. Modify your docker VM (increase the RAM to 4GB at least) if yoy are not in Linux
 3. git clone
 4. docker-compose up
-5. http://docker-machine-ip:8080 
+5. Go to http://your-docker-machine-ip:8080 
 6. Enjoy!
 
 
