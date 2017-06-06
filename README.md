@@ -1,7 +1,7 @@
 # datahack
 Datahack spark live coding demo code
 
-##Usage:
+## Usage:
 
 1. Install docker toolbox (docker & docker-compose commands must be installed).
 2. Modify your docker VM (increase the RAM to 4GB at least) if yoy are not in Linux
