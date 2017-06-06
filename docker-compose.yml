@@ -1,7 +1,9 @@
 version: '3'
 services:
   spark:
-    build: docker
+    #whether you want to build the docker image comment the "image" line and uncomment "build" line
+    #build: docker
+    image: neuw84/spark-zeppeling:latest
     ports:
      - "8080:8080"
      - "4040:4040"
@@ -11,6 +13,6 @@ services:
     - ./data:/usr/zeppelin/data
     - ./notebooks:/usr/zeppelin/notebook
   cassandra:
-    image: "cassandra:2"
+    image: cassandra:2
     links:
       - spark

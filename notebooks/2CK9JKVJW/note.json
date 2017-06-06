@@ -1,9 +1,47 @@
 {
   "paragraphs": [
     {
-      "text": "val bankText \u003d sc.textFile(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\n\r\ncase class Bank(age:Integer, job:String, marital : String, education : String, balance : Integer)\r\n\r\n// split each line, filter out header (starts with \"age\"), and map it into Bank case class  \r\nval bank \u003d bankText.map(s\u003d\u003es.split(\";\")).filter(s\u003d\u003es(0)!\u003d\"\\\"age\\\"\").map(\r\n    s\u003d\u003eBank(s(0).toInt, \r\n            s(1).replaceAll(\"\\\"\", \"\"),\r\n            s(2).replaceAll(\"\\\"\", \"\"),\r\n            s(3).replaceAll(\"\\\"\", \"\"),\r\n            s(5).replaceAll(\"\\\"\", \"\").toInt\r\n        )\r\n)\r\n\r\n//repartition\r\nval compacted\u003dbank.repartition(2)\r\n\r\n// convert to DataFrame and create temporal table\r\nbank.toDF().registerTempTable(\"bank\")\r\ncompacted.toDF().registerTempTable(\"compacted\")",
+      "text": "%md\nWelcome to Spark Datahack course\n![Spark](https://spark.apache.org/images/spark-logo-trademark.png)\n![Datahack](http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png)\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 5, 2017 9:24:19 PM",
+      "dateUpdated": "Jun 6, 2017 6:41:00 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWelcome to Spark Datahack course\u003cbr/\u003e\u003cimg src\u003d\"https://spark.apache.org/images/spark-logo-trademark.png\" alt\u003d\"Spark\" /\u003e\u003cbr/\u003e\u003cimg src\u003d\"http://www.datahack.es/wp-content/uploads/2015/10/LogoWhite.png\" alt\u003d\"Datahack\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496773400966_426901212",
+      "id": "20170606-182320_455215110",
+      "dateCreated": "Jun 6, 2017 6:23:20 PM",
+      "dateStarted": "Jun 6, 2017 6:41:00 PM",
+      "dateFinished": "Jun 6, 2017 6:41:00 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//old way of reading csv\r\nval bankText \u003d sc.textFile(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\ncase class Bank(age:Integer, job:String, marital : String, education : String, balance : Integer)\r\n\r\n// split each line, filter out header (starts with \"age\"), and map it into Bank case class  \r\nval bank \u003d bankText.map(s\u003d\u003es.split(\";\")).filter(s\u003d\u003es(0)!\u003d\"\\\"age\\\"\").map(\r\n    s\u003d\u003eBank(s(0).toInt, \r\n            s(1).replaceAll(\"\\\"\", \"\"),\r\n            s(2).replaceAll(\"\\\"\", \"\"),\r\n            s(3).replaceAll(\"\\\"\", \"\"),\r\n            s(5).replaceAll(\"\\\"\", \"\").toInt\r\n        )\r\n)\r\n\r\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 6, 2017 6:34:30 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -23,7 +61,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\nbankText: org.apache.spark.rdd.RDD[String] \u003d /usr/zeppelin/data/bank/bank-full.csv MapPartitionsRDD[85] at textFile at \u003cconsole\u003e:27\n\ndefined class Bank\n\nbank: org.apache.spark.rdd.RDD[Bank] \u003d MapPartitionsRDD[88] at map at \u003cconsole\u003e:31\n\ncompacted: org.apache.spark.rdd.RDD[Bank] \u003d MapPartitionsRDD[92] at repartition at \u003cconsole\u003e:33\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
+            "data": "\nbankText: org.apache.spark.rdd.RDD[String] \u003d /usr/zeppelin/data/bank/bank-full.csv MapPartitionsRDD[177] at textFile at \u003cconsole\u003e:28\n\ndefined class Bank\n\nbank: org.apache.spark.rdd.RDD[Bank] \u003d MapPartitionsRDD[180] at map at \u003cconsole\u003e:31\n"
           }
         ]
       },
@@ -31,22 +69,58 @@
       "jobName": "paragraph_1496696452676_1189682229",
       "id": "20170605-210052_1887255984",
       "dateCreated": "Jun 5, 2017 9:00:52 PM",
-      "dateStarted": "Jun 5, 2017 9:24:19 PM",
-      "dateFinished": "Jun 5, 2017 9:24:24 PM",
+      "dateStarted": "Jun 6, 2017 6:34:30 PM",
+      "dateFinished": "Jun 6, 2017 6:34:33 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql select age, count(1) from bank where age \u003c 30 group by age order by age\r\n",
+      "text": "%md \nAge distribution from bank",
       "user": "anonymous",
-      "dateUpdated": "Jun 5, 2017 9:24:19 PM",
+      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAge distribution from bank\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496773887064_1662250020",
+      "id": "20170606-183127_1953703662",
+      "dateCreated": "Jun 6, 2017 6:31:27 PM",
+      "dateStarted": "Jun 6, 2017 6:34:31 PM",
+      "dateFinished": "Jun 6, 2017 6:34:31 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql select age, count(1) from bank where age \u003c 30 group by age order by age\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
         "results": {
           "0": {
             "graph": {
-              "mode": "stackedAreaChart",
+              "mode": "multiBarChart",
               "height": 300.0,
               "optionOpen": false
             },
@@ -73,27 +147,27 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1496696490997_814961991",
-      "id": "20170605-210130_136374497",
-      "dateCreated": "Jun 5, 2017 9:01:30 PM",
-      "dateStarted": "Jun 5, 2017 9:24:19 PM",
-      "dateFinished": "Jun 5, 2017 9:24:28 PM",
+      "jobName": "paragraph_1496774000194_397534413",
+      "id": "20170606-183320_2108168495",
+      "dateCreated": "Jun 6, 2017 6:33:20 PM",
+      "dateStarted": "Jun 6, 2017 6:34:31 PM",
+      "dateFinished": "Jun 6, 2017 6:34:36 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql select age, count(1) from compacted where age \u003c 30 group by age order by age\n",
+      "text": "%md\nAge distribution with certain marital status\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 5, 2017 9:24:19 PM",
+      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
+          "language": "markdown",
+          "editOnDblClick": true
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/markdown"
       },
       "settings": {
         "params": {},
@@ -103,47 +177,148 @@
         "code": "SUCCESS",
         "msg": [
           {
-            "type": "TABLE",
-            "data": "age\tcount(1)\n18\t12\n19\t35\n20\t50\n21\t79\n22\t129\n23\t202\n24\t302\n25\t527\n26\t805\n27\t909\n28\t1038\n29\t1185\n"
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAge distribution with certain marital status\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1496696610728_-271984300",
-      "id": "20170605-210330_651024633",
-      "dateCreated": "Jun 5, 2017 9:03:30 PM",
-      "dateStarted": "Jun 5, 2017 9:24:25 PM",
-      "dateFinished": "Jun 5, 2017 9:24:31 PM",
+      "jobName": "paragraph_1496774040806_940677267",
+      "id": "20170606-183400_176056686",
+      "dateCreated": "Jun 6, 2017 6:34:00 PM",
+      "dateStarted": "Jun 6, 2017 6:34:31 PM",
+      "dateFinished": "Jun 6, 2017 6:34:31 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql\n",
+      "text": "%sql\nselect age, count(1) from bank where marital\u003d\"${marital\u003dsingle,single|divorced|married}\" group by age order by age\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 5, 2017 9:24:19 PM",
+      "dateUpdated": "Jun 6, 2017 6:34:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sql",
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "marital": "single"
+        },
+        "forms": {
+          "marital": {
+            "name": "marital",
+            "defaultValue": "single",
+            "options": [
+              {
+                "value": "single"
+              },
+              {
+                "value": "divorced"
+              },
+              {
+                "value": "married"
+              }
+            ],
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tcount(1)\n18\t12\n19\t35\n20\t47\n21\t74\n22\t120\n23\t175\n24\t248\n25\t423\n26\t615\n27\t658\n28\t697\n29\t683\n30\t1012\n31\t1017\n32\t941\n33\t746\n34\t650\n35\t631\n36\t538\n37\t453\n38\t394\n39\t346\n40\t257\n41\t241\n42\t218\n43\t183\n44\t170\n45\t146\n46\t130\n47\t100\n48\t124\n49\t101\n50\t76\n51\t72\n52\t62\n53\t71\n54\t55\n55\t54\n56\t45\n57\t38\n58\t35\n59\t36\n60\t27\n61\t5\n63\t2\n66\t5\n67\t3\n68\t4\n69\t2\n70\t1\n71\t1\n72\t5\n73\t2\n77\t1\n83\t2\n86\t1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496773677409_-236022787",
+      "id": "20170606-182757_1365789518",
+      "dateCreated": "Jun 6, 2017 6:27:57 PM",
+      "dateStarted": "Jun 6, 2017 6:34:34 PM",
+      "dateFinished": "Jun 6, 2017 6:34:38 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//spark 2.1 way of reading csv files\r\nval df \u003d spark.read\r\n        .format(\"csv\")\r\n        .option(\"header\", \"true\") //reading the headers\r\n        .option(\"mode\", \"DROPMALFORMED\")\r\n        .csv(\"/usr/zeppelin/data/bank/bank-full.csv\")\r\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "sql",
+          "language": "scala",
           "editOnDblClick": false
         },
-        "editorMode": "ace/mode/sql"
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\ndf: org.apache.spark.sql.DataFrame \u003d [\"age\";\"job\";\"marital\";\"education\";\"default\";\"balance\";\"housing\";\"loan\";\"contact\";\"day\";\"month\";\"duration\";\"campaign\";\"pdays\";\"previous\";\"poutcome\";\"y\"\": string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496773080624_-1626764179",
+      "id": "20170606-181800_315918021",
+      "dateCreated": "Jun 6, 2017 6:18:00 PM",
+      "dateStarted": "Jun 6, 2017 6:34:36 PM",
+      "dateFinished": "Jun 6, 2017 6:34:39 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "Jun 6, 2017 6:34:31 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1496697815353_1274054964",
-      "id": "20170605-212335_53586817",
-      "dateCreated": "Jun 5, 2017 9:23:35 PM",
-      "status": "FINISHED",
+      "jobName": "paragraph_1496773728205_683804564",
+      "id": "20170606-182848_1978297950",
+      "dateCreated": "Jun 6, 2017 6:28:48 PM",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "spark",
+  "name": "Spark basic",
   "id": "2CK9JKVJW",
   "angularObjects": {
     "2CMA4VF9D:shared_process": [],
