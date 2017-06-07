@@ -1,0 +1,150 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nWe need to put the Spark twitter dependency on the Spark interpreter config: ```org.apache.bahir:spark-streaming-twitter_2.11:2.1.0``` then get Twitter crendentials at https://apps.twitter.com\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 7:40:38 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWe need to put the Spark twitter dependency on the Spark interpreter config: \u003ccode\u003eorg.apache.bahir:spark-streaming-twitter_2.11:2.1.0\u003c/code\u003e then get Twitter crendentials at \u003ca href\u003d\"https://apps.twitter.com\"\u003ehttps://apps.twitter.com\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496818741424_-2053726313",
+      "id": "20170607-065901_1274790031",
+      "dateCreated": "Jun 7, 2017 6:59:01 AM",
+      "dateStarted": "Jun 7, 2017 7:40:38 AM",
+      "dateFinished": "Jun 7, 2017 7:40:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nimport org.apache.spark.streaming.twitter._\nimport org.apache.spark.streaming._\nimport org.apache.spark.storage.StorageLevel\nimport scala.io.Source\nimport scala.collection.mutable.HashMap\nimport java.io.File\nimport org.apache.log4j.Logger\nimport org.apache.log4j.Level\nimport sys.process.stringSeqToProcess\nimport org.apache.spark.SparkConf\n\n\n// ********************************* Configures the Oauth Credentials for accessing Twitter ****************************\n\ndef configureTwitterCredentials(apiKey: String, apiSecret: String, accessToken: String, accessTokenSecret: String) {\n      val configs \u003d new HashMap[String, String] ++\u003d Seq(\n    \"apiKey\" -\u003e apiKey, \"apiSecret\" -\u003e apiSecret, \"accessToken\" -\u003e accessToken, \"accessTokenSecret\" -\u003e accessTokenSecret)\n  println(\"Configuring Twitter OAuth\")\n  configs.foreach{ case(key, value) \u003d\u003e\n    if (value.trim.isEmpty) {\n      throw new Exception(\"Error setting authentication - value for \" + key + \" not set\")\n    }\n    val fullKey \u003d \"twitter4j.oauth.\" + key.replace(\"api\", \"consumer\")\n    System.setProperty(fullKey, value.trim)\n    println(\"\\tProperty \" + fullKey + \" set as [\" + value.trim + \"]\")\n  }\n  println()\n\n}\n\n// ***************************************** Configure Twitter credentials ********************************************\n\nval apiKey \u003d \"WATGphxde9vom1FCfTuSCQ\"\nval apiSecret \u003d \"uHCEqrp6G5htorRwxfkYbxrHqw5i70lo53ThyJvYpD4\"\nval accessToken \u003d \"161592987-g0LGkB6d1NHyiPQHotSGzfgf6ONpmh8bLpTBPGsh\"\nval accessTokenSecret \u003d \"BfgFKOSxVONzo69ZDMEQRVLD2IPpz28m5aV5FsTT8\"\nconfigureTwitterCredentials(apiKey, apiSecret, accessToken, accessTokenSecret)\n\n// ***************************************** Start Streaming Context ********************************************\nval ssc \u003d new StreamingContext(sc, Seconds(2))\nval stream \u003d TwitterUtils.createStream(ssc, None)\n\n\n    val hashTags \u003d stream.flatMap(status \u003d\u003e status.getText.split(\" \").filter(_.startsWith(\"#\")))\n\n    val topCounts60 \u003d hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(60))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n\n    val topCounts10 \u003d hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(10))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n\n\n    // Print popular hashtags\n    topCounts60.foreachRDD(rdd \u003d\u003e {\n      val topList \u003d rdd.take(10)\n      println(\"\\nPopular topics in last 60 seconds (%s total):\".format(rdd.count()))\n      topList.foreach{case (count, tag) \u003d\u003e println(\"%s (%s tweets)\".format(tag, count))}\n    })\n\n    topCounts10.foreachRDD(rdd \u003d\u003e {\n      val topList \u003d rdd.take(10)\n      println(\"\\nPopular topics in last 10 seconds (%s total):\".format(rdd.count()))\n      topList.foreach{case (count, tag) \u003d\u003e println(\"%s (%s tweets)\".format(tag, count))}\n    })\n\n    ssc.start()\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 7:52:38 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\nimport org.apache.spark.streaming.twitter._\n\nimport org.apache.spark.streaming._\n\nimport org.apache.spark.storage.StorageLevel\n\nimport scala.io.Source\n\nimport scala.collection.mutable.HashMap\n\nimport java.io.File\n\nimport org.apache.log4j.Logger\n\nimport org.apache.log4j.Level\n\nimport sys.process.stringSeqToProcess\n\nimport org.apache.spark.SparkConf\n\nconfigureTwitterCredentials: (apiKey: String, apiSecret: String, accessToken: String, accessTokenSecret: String)Unit\n\napiKey: String \u003d WATGphxde9vom1FCfTuSCQ\n\napiSecret: String \u003d uHCEqrp6G5htorRwxfkYbxrHqw5i70lo53ThyJvYpD4\n\naccessToken: String \u003d 161592987-g0LGkB6d1NHyiPQHotSGzfgf6ONpmh8bLpTBPGsh\n\naccessTokenSecret: String \u003d BfgFKOSxVONzo69ZDMEQRVLD2IPpz28m5aV5FsTT8\nConfiguring Twitter OAuth\n\tProperty twitter4j.oauth.consumerKey set as [WATGphxde9vom1FCfTuSCQ]\n\tProperty twitter4j.oauth.accessToken set as [161592987-g0LGkB6d1NHyiPQHotSGzfgf6ONpmh8bLpTBPGsh]\n\tProperty twitter4j.oauth.consumerSecret set as [uHCEqrp6G5htorRwxfkYbxrHqw5i70lo53ThyJvYpD4]\n\tProperty twitter4j.oauth.accessTokenSecret set as [BfgFKOSxVONzo69ZDMEQRVLD2IPpz28m5aV5FsTT8]\n\n\nssc: org.apache.spark.streaming.StreamingContext \u003d org.apache.spark.streaming.StreamingContext@5d762b0\n\nstream: org.apache.spark.streaming.dstream.ReceiverInputDStream[twitter4j.Status] \u003d org.apache.spark.streaming.twitter.TwitterInputDStream@18573911\n\nhashTags: org.apache.spark.streaming.dstream.DStream[String] \u003d org.apache.spark.streaming.dstream.FlatMappedDStream@72c561a6\n\ntopCounts60: org.apache.spark.streaming.dstream.DStream[(Int, String)] \u003d org.apache.spark.streaming.dstream.TransformedDStream@5e8eb031\n\ntopCounts10: org.apache.spark.streaming.dstream.DStream[(Int, String)] \u003d org.apache.spark.streaming.dstream.TransformedDStream@5e192f6e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496818602509_1818619770",
+      "id": "20170607-065642_348799366",
+      "dateCreated": "Jun 7, 2017 6:56:42 AM",
+      "dateStarted": "Jun 7, 2017 7:52:38 AM",
+      "dateFinished": "Jun 7, 2017 7:53:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nssc.stop(stopSparkContext \u003d false, stopGracefully \u003d true)",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 7:55:01 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1496819021324_1813398562",
+      "id": "20170607-070341_1784149830",
+      "dateCreated": "Jun 7, 2017 7:03:41 AM",
+      "dateStarted": "Jun 7, 2017 7:55:01 AM",
+      "dateFinished": "Jun 7, 2017 7:55:27 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 7:40:44 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1496820953823_-791376683",
+      "id": "20170607-073553_151682203",
+      "dateCreated": "Jun 7, 2017 7:35:53 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Spark Streaming",
+  "id": "2CH5TRFBQ",
+  "angularObjects": {
+    "2CHD3N6XP:shared_process": [],
+    "2CHXHJFU6:shared_process": [],
+    "2CK5F94SS:shared_process": [],
+    "2CJERHQTQ:shared_process": [],
+    "2CM9UPU1U:shared_process": [],
+    "2CJUP3PRB:shared_process": [],
+    "2CHDQBZ8C:shared_process": [],
+    "2CK1MPJQK:shared_process": [],
+    "2CJBA4UNV:shared_process": [],
+    "2CJUCKWCX:shared_process": []
+  },
+  "config": {},
+  "info": {}
+}

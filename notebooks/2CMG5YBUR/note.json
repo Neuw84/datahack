@@ -1,23 +1,110 @@
 {
   "paragraphs": [
     {
+      "text": "%md\nCreate keyspace in Cassandra",
       "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 6:52:00 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCreate keyspace in Cassandra\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496818192243_1608732405",
+      "id": "20170607-064952_227383066",
+      "dateCreated": "Jun 7, 2017 6:49:52 AM",
+      "dateStarted": "Jun 7, 2017 6:52:00 AM",
+      "dateFinished": "Jun 7, 2017 6:52:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nCREATE KEYSPACE IF NOT EXISTS datahack\n  WITH REPLICATION \u003d { \n   \u0027class\u0027 : \u0027SimpleStrategy\u0027, \n   \u0027replication_factor\u0027 : 1 \n  };",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 6:49:20 AM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\n\n\u003cdiv class\u003d\"container\"\u003e\n\u003cdiv class\u003d\"row text-center\"\u003e\n\u003ch4\u003eNo Result\u003c/h4\u003e\n\u003c/div\u003e\n\u003cbr/\u003e\n    \u003cdiv class\u003d\"row\"\u003e\n    \u003cdiv class\u003d\"col-md-3\"\u003e\u003c/div\u003e\n    \u003cdiv class\u003d\"col-md-6 col-offset-md-3 table-responsive table-bordered\"\u003e\n        \u003ctable class\u003d\"table\"\u003e\n            \u003ccaption\u003e\u003ch5\u003eLast query execution info\u003c/h5\u003e\u003c/caption\u003e\n            \u003cthead\u003e\n                \u003ctr\u003e\n                    \u003cth\u003eInfo\u003c/th\u003e\n                    \u003cth\u003eValue\u003c/th\u003e\n                \u003c/tr\u003e\n            \u003c/thead\u003e\n            \u003ctbody\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eStatement\u003c/td\u003e\n                    \u003ctd\u003eCREATE KEYSPACE IF NOT EXISTS datahack\n  WITH REPLICATION \u003d { \n   \u0027class\u0027 : \u0027SimpleStrategy\u0027, \n   \u0027replication_factor\u0027 : 1 \n  };\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eAchieved Consistency\u003c/td\u003e\n                    \u003ctd\u003eN/A\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eTried Hosts\u003c/td\u003e\n                    \u003ctd\u003ecassandra172.18.0.2:9042\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eQueried Hosts\u003c/td\u003e\n                    \u003ctd\u003ecassandra172.18.0.2:9042\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eSchema In Agreement\u003c/td\u003e\n                    \u003ctd\u003etrue\u003c/td\u003e\n                \u003c/tr\u003e\n            \u003c/tbody\u003e\n        \u003c/table\u003e\n    \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1496697321254_668737151",
+      "id": "20170605-211521_1924143267",
+      "dateCreated": "Jun 5, 2017 9:15:21 PM",
+      "dateStarted": "Jun 7, 2017 6:49:20 AM",
+      "dateFinished": "Jun 7, 2017 6:49:34 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 7, 2017 6:45:42 AM",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1496697321254_668737151",
-      "id": "20170605-211521_1924143267",
-      "dateCreated": "Jun 5, 2017 9:15:21 PM",
+      "jobName": "paragraph_1496817942657_2036039004",
+      "id": "20170607-064542_1997557185",
+      "dateCreated": "Jun 7, 2017 6:45:42 AM",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
   ],
   "name": "Cassandra",
   "id": "2CMG5YBUR",
-  "angularObjects": {},
+  "angularObjects": {
+    "2CHD3N6XP:shared_process": [],
+    "2CHXHJFU6:shared_process": [],
+    "2CK5F94SS:shared_process": [],
+    "2CJERHQTQ:shared_process": [],
+    "2CM9UPU1U:shared_process": [],
+    "2CJUP3PRB:shared_process": [],
+    "2CHDQBZ8C:shared_process": [],
+    "2CK1MPJQK:shared_process": [],
+    "2CJBA4UNV:shared_process": [],
+    "2CJUCKWCX:shared_process": []
+  },
   "config": {},
   "info": {}
 }

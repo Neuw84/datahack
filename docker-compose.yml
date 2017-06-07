@@ -17,18 +17,6 @@ services:
     depends_on: 
     - cassandra
   cassandra:
-  #spotify image for faster Cassandra startup
-    image: spotify/cassandra    
+    image: cassandra:2    
     ports:
     - "9042:9042"
-  cassandra-web:
-    image: delermando/docker-cassandra-web:v0.4.0
-    environment: 
-      - CASSANDRA_HOST_IP=192.168.99.100
-      - CASSANDRA_PORT=9042    
-    ports:
-     - "3000:3000"
-    links: 
-    - cassandra
-    depends_on: 
-    - cassandra
