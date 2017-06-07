@@ -14,5 +14,5 @@ Datahack Apache Spark live coding demo code
 ## Details:
 
 * Spark UI can be accesed at http://your-docker-machine-ip:4040
-* Cassandra CQL native transport endpoint is at http://your-docker-machine-ip:9042 
+* Cassandra CQL native transport endpoint is at your-docker-machine-ip:9042 
 
