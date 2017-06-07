@@ -1,6 +1,9 @@
 # Datahack
 
-Datahack Apache Spark live coding demo code
+Datahack Apache Spark live coding demo code.
+
+This demo consists of Different Zeppelin notebooks demostrating a Lambda architecture using Apache Spark and Appache Cassandra. 
+
 
 ## Usage:
 
