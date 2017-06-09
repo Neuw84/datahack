@@ -3,7 +3,7 @@
     {
       "text": "%md\nWe need to put the Spark twitter dependency on the Spark interpreter config: ```org.apache.bahir:spark-streaming-twitter_2.11:2.1.0``` then get Twitter crendentials at https://apps.twitter.com\n```com.datastax.spark:spark-cassandra-connector_2.11:2.0.2```\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 7, 2017 9:21:25 AM",
+      "dateUpdated": "Jun 9, 2017 10:28:56 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
@@ -13,8 +13,8 @@
           "editOnDblClick": true
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -39,9 +39,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\nimport org.apache.spark.streaming.twitter._\nimport org.apache.spark.streaming._\nimport org.apache.spark.storage.StorageLevel\nimport scala.io.Source\nimport scala.collection.mutable.HashMap\nimport java.io.File\nimport org.apache.log4j.Logger\nimport org.apache.log4j.Level\nimport sys.process.stringSeqToProcess\nimport org.apache.spark.SparkConf\n\n\n// ********************************* Configures the Oauth Credentials for accessing Twitter ****************************\n\ndef configureTwitterCredentials(apiKey: String, apiSecret: String, accessToken: String, accessTokenSecret: String) {\n      val configs \u003d new HashMap[String, String] ++\u003d Seq(\n    \"apiKey\" -\u003e apiKey, \"apiSecret\" -\u003e apiSecret, \"accessToken\" -\u003e accessToken, \"accessTokenSecret\" -\u003e accessTokenSecret)\n  println(\"Configuring Twitter OAuth\")\n  configs.foreach{ case(key, value) \u003d\u003e\n    if (value.trim.isEmpty) {\n      throw new Exception(\"Error setting authentication - value for \" + key + \" not set\")\n    }\n    val fullKey \u003d \"twitter4j.oauth.\" + key.replace(\"api\", \"consumer\")\n    System.setProperty(fullKey, value.trim)\n    println(\"\\tProperty \" + fullKey + \" set as [\" + value.trim + \"]\")\n  }\n  println()\n\n}\n\n// ***************************************** Configure Twitter credentials ********************************************\n\nval apiKey \u003d \"pde7CoNrXUTFU3Imtyefjyplv\"\nval apiSecret \u003d \"rNtgO4eLu09jc2AwnQ8DyNwamfFkz7FESzPMt5u380ewjekdlU\"\nval accessToken \u003d \"161592987-9roYE6xhxf7f0Iu9UsNgCnEejf5CejB1CaS7zilH\"\nval accessTokenSecret \u003d \"5kg0X5YfjY4cBB0fjUgnbFU5p1wbokqfxTnk3MYQsS58N\"\n\nconfigureTwitterCredentials(apiKey, apiSecret, accessToken, accessTokenSecret)\n// ***************************************** Start Streaming Context ********************************************\nval ssc \u003d new StreamingContext(sc, Seconds(2))\nval stream \u003d TwitterUtils.createStream(ssc, None)\n\n\n    val hashTags \u003d stream.flatMap(status \u003d\u003e status.getText.split(\" \").filter(_.startsWith(\"#\")))\n\n    hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(60))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n                     .foreachRDD(rdd\u003d\u003e rdd.toDF().registerTempTable(\"count_60\"))\n\n    hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(10))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n                     .foreachRDD(rdd\u003d\u003erdd.toDF().registerTempTable(\"count_10\"))\n\n\n\n    ssc.start()\n\n\n",
+      "text": "%spark\nimport org.apache.spark.streaming.twitter._\nimport org.apache.spark.streaming._\nimport org.apache.spark.storage.StorageLevel\nimport scala.io.Source\nimport scala.collection.mutable.HashMap\nimport java.io.File\nimport org.apache.log4j.Logger\nimport org.apache.log4j.Level\nimport sys.process.stringSeqToProcess\nimport org.apache.spark.SparkConf\n\n\n// ********************************* Configures the Oauth Credentials for accessing Twitter ****************************\n\ndef configureTwitterCredentials(apiKey: String, apiSecret: String, accessToken: String, accessTokenSecret: String) {\n      val configs \u003d new HashMap[String, String] ++\u003d Seq(\n    \"apiKey\" -\u003e apiKey, \"apiSecret\" -\u003e apiSecret, \"accessToken\" -\u003e accessToken, \"accessTokenSecret\" -\u003e accessTokenSecret)\n  println(\"Configuring Twitter OAuth\")\n  configs.foreach{ case(key, value) \u003d\u003e\n    if (value.trim.isEmpty) {\n      throw new Exception(\"Error setting authentication - value for \" + key + \" not set\")\n    }\n    val fullKey \u003d \"twitter4j.oauth.\" + key.replace(\"api\", \"consumer\")\n    System.setProperty(fullKey, value.trim)\n    println(\"\\tProperty \" + fullKey + \" set as [\" + value.trim + \"]\")\n  }\n  println()\n\n}\n\n// ***************************************** Configure Twitter credentials ********************************************\n\nval apiKey \u003d \"your_api_key\"\nval apiSecret \u003d \"your_api_secret\"\nval accessToken \u003d \"...\"\nval accessTokenSecret \u003d \"...\"\n\n\nconfigureTwitterCredentials(apiKey, apiSecret, accessToken, accessTokenSecret)\n// ***************************************** Start Streaming Context ********************************************\nval ssc \u003d new StreamingContext(sc, Seconds(2))\nval stream \u003d TwitterUtils.createStream(ssc, None)\n\n\n    val hashTags \u003d stream.flatMap(status \u003d\u003e status.getText.split(\" \").filter(_.startsWith(\"#\")))\n\n    hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(60))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n                     .foreachRDD(rdd\u003d\u003e rdd.toDF().registerTempTable(\"count_60\"))\n\n    hashTags.map((_, 1)).reduceByKeyAndWindow(_ + _, Seconds(10))\n                     .map{case (topic, count) \u003d\u003e (count, topic)}\n                     .transform(_.sortByKey(false))\n                     .foreachRDD(rdd\u003d\u003erdd.toDF().registerTempTable(\"count_10\"))\n\n\n\n    ssc.start()\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 9:21:11 AM",
+      "dateUpdated": "Jun 9, 2017 10:29:11 AM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
