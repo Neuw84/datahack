@@ -7,10 +7,10 @@ This demo consists of Different Zeppelin notebooks demostrating a Lambda archite
 
 ## Usage:
 
-1. Install docker toolbox (docker & docker-compose commands must be installed).
+1. Install docker toolbox (or upgrade to latest version), ```docker-compose``` must be installed.
 2. Modify your docker VM (increase the RAM to 4GB at least and >1 CPUs) if you are not in Linux
-3. git clone
-4. docker-compose up
+3. ```git clone```
+4. ```docker-compose up```
 5. Open Zeppelin at http://your-docker-machine-ip:8080 
 6. Enjoy!
 
