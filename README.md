@@ -17,5 +17,5 @@ This demo consists of Different Zeppelin notebooks demostrating a Lambda archite
 ## Details:
 
 * Spark UI can be accesed at http://your-docker-machine-ip:4040
-* Cassandra CQL native transport endpoint is at your-docker-machine-ip:9042 
+* Cassandra CQL native transport endpoint is at ```your-docker-machine-ip:9042 ```
 
