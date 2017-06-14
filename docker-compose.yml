@@ -8,7 +8,7 @@ services:
      - "8080:8080"
      - "4040:4040"
     environment:
-     - ZEPPELIN_JAVA_OPTS=-Dcassandra.hosts=cassandra
+     - ZEPPELIN_JAVA_OPTS=-Dcassandra.hosts=cassandra    
     volumes:
     - ./data:/usr/zeppelin/data
     - ./notebooks:/usr/zeppelin/notebook  

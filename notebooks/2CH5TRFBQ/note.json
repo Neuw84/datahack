@@ -1,18 +1,18 @@
 {
   "paragraphs": [
     {
-      "text": "%md\nWe need to put the Spark twitter dependency on the Spark interpreter config: ```org.apache.bahir:spark-streaming-twitter_2.11:2.1.0``` then get Twitter crendentials at https://apps.twitter.com\n```com.datastax.spark:spark-cassandra-connector_2.11:2.0.2```\n",
+      "text": "%md\nWe need to put the Spark twitter dependency on the Spark interpreter config: ```org.apache.bahir:spark-streaming-twitter_2.11:2.1.0``` then get Twitter crendentials at https://apps.twitter.com\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:28:56 AM",
+      "dateUpdated": "Jun 14, 2017 3:04:14 PM",
       "config": {
         "colWidth": 12.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true
+          "language": "text",
+          "editOnDblClick": false
         },
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "editorHide": false,
         "tableHide": true
       },
@@ -466,16 +466,16 @@
   "name": "Spark Streaming",
   "id": "2CH5TRFBQ",
   "angularObjects": {
-    "2CHD3N6XP:shared_process": [],
-    "2CHXHJFU6:shared_process": [],
-    "2CK5F94SS:shared_process": [],
-    "2CJERHQTQ:shared_process": [],
-    "2CM9UPU1U:shared_process": [],
-    "2CJUP3PRB:shared_process": [],
-    "2CHDQBZ8C:shared_process": [],
-    "2CK1MPJQK:shared_process": [],
-    "2CJBA4UNV:shared_process": [],
-    "2CJUCKWCX:shared_process": []
+    "2CN1UVP7D:shared_process": [],
+    "2CN9VVPF1:shared_process": [],
+    "2CHJSDRH5:shared_process": [],
+    "2CK45U2D4:shared_process": [],
+    "2CM8V3G1P:shared_process": [],
+    "2CK1N3ABD:shared_process": [],
+    "2CM6N96C1:shared_process": [],
+    "2CJYV6H3Q:shared_process": [],
+    "2CKNB9JWC:shared_process": [],
+    "2CHV9DKVJ:shared_process": []
   },
   "config": {},
   "info": {}

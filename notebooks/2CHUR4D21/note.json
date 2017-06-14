@@ -2,9 +2,9 @@
   "paragraphs": [
     {
       "title": "1 - Markdown",
-      "text": "%md \n# Apache Zeppelin + Apache Spark + Apache Cassandra\n\nThis is a demonstration showing how to use [Apache Zeppelin notebook](https://zeppelin.incubator.apache.org/) to interact with [Apache Cassandra](http://cassandra.apache.org/) NoSQL database through [Apache Spark](http://spark.apache.org/) or directly through Cassandra CQL language.\n\n*Please note this is an unofficial demo and tutorial.*\n\n### Apache Spark\n\nApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\nMore details can be found here [http://spark.apache.org](http://spark.apache.org/).\nIt is  used for Cassandra data processing needs (ETL, transformations, analytics ...).\n\n### DataStax Spark Cassandra Connector\n\n[DataStax](http://www.datatstax.com) have developped a Spark Cassandra Connector to be able to read and write Cassandra data from Spark API. \nThe Spark Cassandra Connector lets you expose Cassandra tables as Spark RDDs (or DataFrames), write Spark RDDs (or DataFrames) to Cassandra tables, and execute arbitrary SQL queries from your Spark applications.\n\nUseful links:\n* [The Spark Cassandra Connector github repository](https://github.com/datastax/spark-cassandra-connector)\n* [Getting started with Apache Spark and Cassandra](https://academy.datastax.com/fr/demos/getting-started-apache-spark-and-cassandra)\n* [Free training on DataStax Enterprise Analytics with Apache Spark](https://academy.datastax.com/fr/courses/getting-started-apache-spark)\n\n### CQL Language\n\nThe Cassandra Query Language (CQL) is the primary language for communicating with the Cassandra database.\nDocumentation on CQL usage:\n* [Introduction to CQL](http://docs.datastax.com/en/cql/3.3/cql/cqlIntro.html)\n* [Using CQL](https://docs.datastax.com/en/cql/3.3/cql/cql_using/useAboutCQL.html)\n\nThe Cassandra CQL Interpreter for Apache Zeppelin is written by my colleague Duy Hai Doan  [@doanduyhai](https://twitter.com/doanduyhai)\n[CQL Interpreter documentation for Apache Zeppelin 0.5.5](https://zeppelin.incubator.apache.org/docs/0.5.5-incubating/interpreter/cassandra.html)\n\n\n",
+      "text": "%md \n# Apache Zeppelin + Apache Spark + Apache Cassandra\n\n## Useful links:\n\n* [The Spark Cassandra Connector github repository](https://github.com/datastax/spark-cassandra-connector)\n* [Introduction to CQL](http://docs.datastax.com/en/cql/3.3/cql/cqlIntro.html)\n* [Using CQL](https://docs.datastax.com/en/cql/3.3/cql/cql_using/useAboutCQL.html)\n\n## Requirements:\n\nLoad ```com.datastax.spark:spark-cassandra-connector_2.11:2.0.2``` dependency and add ```spark.cassandra.connection.host\u003dcassandra``` property to the spark interpreter\n\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:04:32 AM",
+      "dateUpdated": "Jun 14, 2017 3:19:26 PM",
       "config": {
         "tableHide": false,
         "colWidth": 12.0,
@@ -22,7 +22,10 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        }
       },
       "settings": {
         "params": {},
@@ -33,7 +36,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eApache Zeppelin + Apache Spark + Apache Cassandra\u003c/h1\u003e\n\u003cp\u003eThis is a demonstration showing how to use \u003ca href\u003d\"https://zeppelin.incubator.apache.org/\"\u003eApache Zeppelin notebook\u003c/a\u003e to interact with \u003ca href\u003d\"http://cassandra.apache.org/\"\u003eApache Cassandra\u003c/a\u003e NoSQL database through \u003ca href\u003d\"http://spark.apache.org/\"\u003eApache Spark\u003c/a\u003e or directly through Cassandra CQL language.\u003c/p\u003e\n\u003cp\u003e\u003cem\u003ePlease note this is an unofficial demo and tutorial.\u003c/em\u003e\u003c/p\u003e\n\u003ch3\u003eApache Spark\u003c/h3\u003e\n\u003cp\u003eApache Spark is a fast and general engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.\u003cbr/\u003eMore details can be found here \u003ca href\u003d\"http://spark.apache.org/\"\u003ehttp://spark.apache.org\u003c/a\u003e.\u003cbr/\u003eIt is used for Cassandra data processing needs (ETL, transformations, analytics \u0026hellip;).\u003c/p\u003e\n\u003ch3\u003eDataStax Spark Cassandra Connector\u003c/h3\u003e\n\u003cp\u003e\u003ca href\u003d\"http://www.datatstax.com\"\u003eDataStax\u003c/a\u003e have developped a Spark Cassandra Connector to be able to read and write Cassandra data from Spark API.\u003cbr/\u003eThe Spark Cassandra Connector lets you expose Cassandra tables as Spark RDDs (or DataFrames), write Spark RDDs (or DataFrames) to Cassandra tables, and execute arbitrary SQL queries from your Spark applications.\u003c/p\u003e\n\u003cp\u003eUseful links:\u003cbr/\u003e* \u003ca href\u003d\"https://github.com/datastax/spark-cassandra-connector\"\u003eThe Spark Cassandra Connector github repository\u003c/a\u003e\u003cbr/\u003e* \u003ca href\u003d\"https://academy.datastax.com/fr/demos/getting-started-apache-spark-and-cassandra\"\u003eGetting started with Apache Spark and Cassandra\u003c/a\u003e\u003cbr/\u003e* \u003ca href\u003d\"https://academy.datastax.com/fr/courses/getting-started-apache-spark\"\u003eFree training on DataStax Enterprise Analytics with Apache Spark\u003c/a\u003e\u003c/p\u003e\n\u003ch3\u003eCQL Language\u003c/h3\u003e\n\u003cp\u003eThe Cassandra Query Language (CQL) is the primary language for communicating with the Cassandra database.\u003cbr/\u003eDocumentation on CQL usage:\u003cbr/\u003e* \u003ca href\u003d\"http://docs.datastax.com/en/cql/3.3/cql/cqlIntro.html\"\u003eIntroduction to CQL\u003c/a\u003e\u003cbr/\u003e* \u003ca href\u003d\"https://docs.datastax.com/en/cql/3.3/cql/cql_using/useAboutCQL.html\"\u003eUsing CQL\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eThe Cassandra CQL Interpreter for Apache Zeppelin is written by my colleague Duy Hai Doan \u003ca href\u003d\"https://twitter.com/doanduyhai\"\u003e@doanduyhai\u003c/a\u003e\u003cbr/\u003e\u003ca href\u003d\"https://zeppelin.incubator.apache.org/docs/0.5.5-incubating/interpreter/cassandra.html\"\u003eCQL Interpreter documentation for Apache Zeppelin 0.5.5\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eApache Zeppelin + Apache Spark + Apache Cassandra\u003c/h1\u003e\n\u003ch2\u003eUseful links:\u003c/h2\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://github.com/datastax/spark-cassandra-connector\"\u003eThe Spark Cassandra Connector github repository\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"http://docs.datastax.com/en/cql/3.3/cql/cqlIntro.html\"\u003eIntroduction to CQL\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://docs.datastax.com/en/cql/3.3/cql/cql_using/useAboutCQL.html\"\u003eUsing CQL\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eRequirements:\u003c/h2\u003e\n\u003cp\u003eLoad \u003ccode\u003ecom.datastax.spark:spark-cassandra-connector_2.11:2.0.2\u003c/code\u003e dependency and add \u003ccode\u003espark.cassandra.connection.host\u003dcassandra\u003c/code\u003e property to the spark interpreter\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -41,21 +44,20 @@
       "jobName": "paragraph_1497002665043_1756657811",
       "id": "20160113-181412_1813689583",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "dateStarted": "Jun 9, 2017 10:04:32 AM",
-      "dateFinished": "Jun 9, 2017 10:04:32 AM",
+      "dateStarted": "Jun 14, 2017 3:19:26 PM",
+      "dateFinished": "Jun 14, 2017 3:19:26 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "2 - Shell command example",
-      "text": "%sh pwd\nls -l",
+      "title": "2 - Download csv file",
+      "text": "%sh\n\nwget https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\n\n# Or download direclty the demo CSV file from https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:04:45 AM",
+      "dateUpdated": "Jun 14, 2017 3:05:08 PM",
       "config": {
-        "tableHide": false,
         "colWidth": 12.0,
         "editorMode": "ace/mode/sh",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -68,7 +70,10 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
@@ -79,23 +84,24 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "/usr/zeppelin\ntotal 28008\ndrwxr-xr-x  2 root root      4096 Jun  5 19:09 bin\ndrwxr-xr-x  2 root root      4096 Jun  7 06:47 conf\ndrwxrwxrwx  1 1000 staff        0 Jun  5 21:00 data\ndrwxr-xr-x 13 root root      4096 Jun  5 19:17 interpreter\ndrwxr-xr-x  4 root root     12288 Jun  5 19:28 lib\n-rw-r--r--  1 root root     15569 Jun  5 19:09 LICENSE\ndrwxr-xr-x  2 root root      4096 Jun  5 19:09 licenses\ndrwxr-xr-x 10 root root      4096 Jun  9 09:11 local-repo\ndrwxr-xr-x  2 root root      4096 Jun  9 10:04 logs\ndrwxrwxrwx  1 1000 staff     4096 Jun  9 10:04 notebook\n-rw-r--r--  1 root root       253 Jun  5 19:09 NOTICE\n-rw-r--r--  1 root root      1324 Jun  5 19:09 README.md\ndrwxr-xr-x  2 root root      4096 Jun  9 10:04 run\ndrwxr-xr-x  2 root root      4096 Jun  7 06:53 spark-warehouse\ndrwxr-xr-x  3 root root      4096 Jun  9 09:11 webapps\n-rw-r--r--  1 root root  28598322 Jun  5 19:24 zeppelin-web-0.7.1.war\n"
+            "data": "--2017-06-14 15:05:08--  https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\nResolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...\nConnecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.0.133|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 6851577 (6.5M) [text/plain]\nSaving to: ‘albums.csv.1’\n\n     0K .......... .......... .......... .......... ..........  0%  268K 25s\n    50K .......... .......... .......... .......... ..........  1%  385K 21s\n   100K .......... .......... .......... .......... ..........  2%  376K 20s\n   150K .......... .......... .......... .......... ..........  2%  494K 18s\n   200K .......... .......... .......... .......... ..........  3%  507K 17s\n   250K .......... .......... .......... .......... ..........  4%  592K 16s\n   300K .......... .......... .......... .......... ..........  5%  393K 16s\n   350K .......... .......... .......... .......... ..........  5%  299K 16s\n   400K .......... .......... .......... .......... ..........  6%  363K 16s\n   450K .......... .......... .......... .......... ..........  7%  789K 15s\n   500K .......... .......... .......... .......... ..........  8%  611K 15s\n   550K .......... .......... .......... .......... ..........  8%  865K 14s\n   600K .......... .......... .......... .......... ..........  9% 1021K 13s\n   650K .......... .......... .......... .......... .......... 10%  511K 13s\n   700K .......... .......... .......... .......... .......... 11%  499K 13s\n   750K .......... .......... .......... .......... .......... 11%  833K 12s\n   800K .......... .......... .......... .......... .......... 12%  471K 12s\n   850K .......... .......... .......... .......... .......... 13%  453K 12s\n   900K .......... .......... .......... .......... .......... 14%  465K 12s\n   950K .......... .......... .......... .......... .......... 14%  849K 12s\n  1000K .......... .......... .......... .......... .......... 15%  687K 11s\n  1050K .......... .......... .......... .......... .......... 16%  395K 11s\n  1100K .......... .......... .......... .......... .......... 17%  376K 12s\n  1150K .......... .......... .......... .......... .......... 17%  470K 11s\n  1200K .......... .......... .......... .......... .......... 18%  469K 11s\n  1250K .......... .......... .......... .......... .......... 19%  546K 11s\n  1300K .......... .......... .......... .......... .......... 20%  964K 11s\n  1350K .......... .......... .......... .......... .......... 20%  812K 11s\n  1400K .......... .......... .......... .......... .......... 21%  649K 10s\n  1450K .......... .......... .......... .......... .......... 22%  568K 10s\n  1500K .......... .......... .......... .......... .......... 23%  502K 10s\n  1550K .......... .......... .......... .......... .......... 23%  497K 10s\n  1600K .......... .......... .......... .......... .......... 24%  569K 10s\n  1650K .......... .......... .......... .......... .......... 25%  865K 10s\n  1700K .......... .......... .......... .......... .......... 26%  725K 10s\n  1750K .......... .......... .......... .......... .......... 26% 1.04M 9s\n  1800K .......... .......... .......... .......... .......... 27%  602K 9s\n  1850K .......... .......... .......... .......... .......... 28% 1.02M 9s\n  1900K .......... .......... .......... .......... .......... 29%  831K 9s\n  1950K .......... .......... .......... .......... .......... 29%  782K 9s\n  2000K .......... .......... .......... .......... .......... 30%  646K 9s\n  2050K .......... .......... .......... .......... .......... 31% 1.28M 8s\n  2100K .......... .......... .......... .......... .......... 32% 1.14M 8s\n  2150K .......... .......... .......... .......... .......... 32% 1.77M 8s\n  2200K .......... .......... .......... .......... .......... 33%  439K 8s\n  2250K .......... .......... .......... .......... .......... 34% 1.06M 8s\n  2300K .......... .......... .......... .......... .......... 35%  767K 8s\n  2350K .......... .......... .......... .......... .......... 35%  619K 7s\n  2400K .......... .......... .......... .......... .......... 36%  515K 7s\n  2450K .......... .......... .......... .......... .......... 37%  870K 7s\n  2500K .......... .......... .......... .......... .......... 38%  393K 7s\n  2550K .......... .......... .......... .......... .......... 38%  844K 7s\n  2600K .......... .......... .......... .......... .......... 39% 1.02M 7s\n  2650K .......... .......... .......... .......... .......... 40%  405K 7s\n  2700K .......... .......... .......... .......... .......... 41%  492K 7s\n  2750K .......... .......... .......... .......... .......... 41% 1.49M 7s\n  2800K .......... .......... .......... .......... .......... 42%  635K 7s\n  2850K .......... .......... .......... .......... .......... 43%  738K 7s\n  2900K .......... .......... .......... .......... .......... 44% 1.29M 6s\n  2950K .......... .......... .......... .......... .......... 44%  534K 6s\n  3000K .......... .......... .......... .......... .......... 45%  497K 6s\n  3050K .......... .......... .......... .......... .......... 46%  978K 6s\n  3100K .......... .......... .......... .......... .......... 47%  870K 6s\n  3150K .......... .......... .......... .......... .......... 47%  942K 6s\n  3200K .......... .......... .......... .......... .......... 48% 1.06M 6s\n  3250K .......... .......... .......... .......... .......... 49%  981K 6s\n  3300K .......... .......... .......... .......... .......... 50% 1.07M 5s\n  3350K .......... .......... .......... .......... .......... 50%  904K 5s\n  3400K .......... .......... .......... .......... .......... 51% 1.04M 5s\n  3450K .......... .......... .......... .......... .......... 52%  880K 5s\n  3500K .......... .......... .......... .......... .......... 53% 1.02M 5s\n  3550K .......... .......... .......... .......... .......... 53%  896K 5s\n  3600K .......... .......... .......... .......... .......... 54% 1.03M 5s\n  3650K .......... .......... .......... .......... .......... 55% 1.55M 5s\n  3700K .......... .......... .......... .......... .......... 56% 1.29M 5s\n  3750K .......... .......... .......... .......... .......... 56%  998K 5s\n  3800K .......... .......... .......... .......... .......... 57%  363K 4s\n  3850K .......... .......... .......... .......... .......... 58%  806K 4s\n  3900K .......... .......... .......... .......... .......... 59%  562K 4s\n  3950K .......... .......... .......... .......... .......... 59%  888K 4s\n  4000K .......... .......... .......... .......... .......... 60%  492K 4s\n  4050K .......... .......... .......... .......... .......... 61%  803K 4s\n  4100K .......... .......... .......... .......... .......... 62% 1.13M 4s\n  4150K .......... .......... .......... .......... .......... 62%  698K 4s\n  4200K .......... .......... .......... .......... .......... 63%  251K 4s\n  4250K .......... .......... .......... .......... .......... 64%  639K 4s\n  4300K .......... .......... .......... .......... .......... 65%  237K 4s\n  4350K .......... .......... .......... .......... .......... 65%  516K 4s\n  4400K .......... .......... .......... .......... .......... 66%  222K 4s\n  4450K .......... .......... .......... .......... .......... 67%  575K 4s\n  4500K .......... .......... .......... .......... .......... 68%  316K 4s\n  4550K .......... .......... .......... .......... .......... 68%  349K 4s\n  4600K .......... .......... .......... .......... .......... 69%  419K 3s\n  4650K .......... .......... .......... .......... .......... 70%  317K 3s\n  4700K .......... .......... .......... .......... .......... 70%  265K 3s\n  4750K .......... .......... .......... .......... .......... 71%  478K 3s\n  4800K .......... .......... .......... .......... .......... 72%  337K 3s\n  4850K .......... .......... .......... .......... .......... 73%  868K 3s\n  4900K .......... .......... .......... .......... .......... 73%  468K 3s\n  4950K .......... .......... .......... .......... .......... 74%  755K 3s\n  5000K .......... .......... .......... .......... .......... 75%  453K 3s\n  5050K .......... .......... .......... .......... .......... 76%  250K 3s\n  5100K .......... .......... .......... .......... .......... 76%  612K 3s\n  5150K .......... .......... .......... .......... .......... 77%  418K 3s\n  5200K .......... .......... .......... .......... .......... 78%  395K 3s\n  5250K .......... .......... .......... .......... .......... 79%  455K 2s\n  5300K .......... .......... .......... .......... .......... 79%  774K 2s\n  5350K .......... .......... .......... .......... .......... 80%  472K 2s\n  5400K .......... .......... .......... .......... .......... 81%  468K 2s\n  5450K .......... .......... .......... .......... .......... 82%  493K 2s\n  5500K .......... .......... .......... .......... .......... 82%  251K 2s\n  5550K .......... .......... .......... .......... .......... 83%  499K 2s\n  5600K .......... .......... .......... .......... .......... 84%  238K 2s\n  5650K .......... .......... .......... .......... .......... 85%  505K 2s\n  5700K .......... .......... .......... .......... .......... 85%  579K 2s\n  5750K .......... .......... .......... .......... .......... 86%  727K 2s\n  5800K .......... .......... .......... .......... .......... 87%  591K 2s\n  5850K .......... .......... .......... .......... .......... 88%  480K 1s\n  5900K .......... .......... .......... .......... .......... 88%  804K 1s\n  5950K .......... .......... .......... .......... .......... 89%  513K 1s\n  6000K .......... .......... .......... .......... .......... 90%  505K 1s\n  6050K .......... .......... .......... .......... .......... 91% 1012K 1s\n  6100K .......... .......... .......... .......... .......... 91%  669K 1s\n  6150K .......... .......... .......... .......... .......... 92%  525K 1s\n  6200K .......... .......... .......... .......... .......... 93%  635K 1s\n  6250K .......... .......... .......... .......... .......... 94%  884K 1s\n  6300K .......... .......... .......... .......... .......... 94% 1.09M 1s\n  6350K .......... .......... .......... .......... .......... 95%  809K 1s\n  6400K .......... .......... .......... .......... .......... 96%  753K 0s\n  6450K .......... .......... .......... .......... .......... 97% 1.31M 0s\n  6500K .......... .......... .......... .......... .......... 97%  760K 0s\n  6550K .......... .......... .......... .......... .......... 98% 1.37M 0s\n  6600K .......... .......... .......... .......... .......... 99%  311K 0s\n  6650K .......... .......... .......... ..........           100% 2.04M\u003d12s\n\n2017-06-14 15:05:22 (562 KB/s) - ‘albums.csv.1’ saved [6851577/6851577]\n\n"
           }
         ]
       },
       "apps": [],
       "jobName": "paragraph_1497002665045_1754349318",
-      "id": "20160113-181412_1623555306",
+      "id": "20160123-165554_1618215392",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "dateStarted": "Jun 9, 2017 10:04:45 AM",
-      "dateFinished": "Jun 9, 2017 10:04:47 AM",
+      "dateStarted": "Jun 14, 2017 3:05:08 PM",
+      "dateFinished": "Jun 14, 2017 3:05:22 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "3 - Add Spark library to read CSV files",
-      "text": "%dep\n\nz.reset()\n\n// Add spark-csv package\n// Versions and documentation on https://github.com/databricks/spark-csv\nz.load(\"com.databricks:spark-csv_2.11:1.3.0\")",
-      "dateUpdated": "Jun 9, 2017 10:05:42 AM",
+      "title": "3 - Spark :  load csv file in dataFrame",
+      "text": "%spark\n\n//Display Spark version used\nprintln(\"Spark version:\"+spark.version)\n\nval df_albums \u003d spark.read\n        .format(\"csv\")\n        .option(\"header\", \"true\") //reading the headers\n        .option(\"mode\", \"DROPMALFORMED\")\n        .csv(\"albums.csv\").cache\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:11:49 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -112,92 +118,38 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "apps": [],
-      "jobName": "paragraph_1497002665045_1754349318",
-      "id": "20160113-181412_342563478",
-      "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "4 - download demo CSV file",
-      "text": "%sh\n\n#wget https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv\n\n# Or download direclty the demo CSV file from https://raw.githubusercontent.com/victorcouste/zeppelin-spark-cassandra-demo/master/albums.csv",
-      "dateUpdated": "Jun 9, 2017 10:05:47 AM",
-      "config": {
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/sh",
-        "editorHide": false,
-        "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "results": {},
-        "editorSetting": {}
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "jobName": "paragraph_1497002665045_1754349318",
-      "id": "20160123-165554_1618215392",
-      "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "4 - Spark :  load cSV File in dataFrame",
-      "text": "%spark\n\n//Display Spark version used\nprintln(\"Spark version:\"+sc.version)\n\nval df_albums \u003d sqlContext.read\n.format(\"com.databricks.spark.csv\")\n.option(\"header\", \"true\")\n.load(\"albums.csv\")\n.cache\n\n//If you want to store albums.csv in a specific folder run\n//val df_albums \u003d sqlContext.read\n//.format(\"com.databricks.spark.csv\")\n//.option(\"header\", \"true\")\n//.load(\"/your_path/albums.csv\")\n//.cache",
-      "dateUpdated": "Jun 9, 2017 10:05:59 AM",
-      "config": {
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "editorHide": false,
-        "title": true,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "results": {},
-        "editorSetting": {}
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Spark version:2.1.0\n\ndf_albums: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [artist: string, album: string ... 4 more fields]\n"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1497002665046_1755503564",
       "id": "20160113-181412_829518708",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:11:49 PM",
+      "dateFinished": "Jun 14, 2017 3:12:12 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "5 - Spark : Print Schema, Show, Filter, GroupBy dataFrame",
+      "title": "4 - Spark : Print Schema, Show, Filter, GroupBy dataFrame",
       "text": "df_albums.printSchema()\ndf_albums.show()\ndf_albums.filter(\"year \u003e 2000\").show()\ndf_albums.groupBy(\"year\").count().show()",
-      "dateUpdated": "Jun 9, 2017 10:05:55 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:06:59 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -214,24 +166,38 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- artist: string (nullable \u003d true)\n |-- album: string (nullable \u003d true)\n |-- year: string (nullable \u003d true)\n |-- country: string (nullable \u003d true)\n |-- quality: string (nullable \u003d true)\n |-- status: string (nullable \u003d true)\n\n+----------+--------------------+----+--------------+-------+--------+\n|    artist|               album|year|       country|quality|  status|\n+----------+--------------------+----+--------------+-------+--------+\n|Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|Ultra Naté|                Free|1997|   Netherlands| normal|Official|\n|Ultra Naté|          Is It Love|1992|           USA| normal|Official|\n|Ultra Naté|New Kind of Medicine|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1997|     Australia| normal|Official|\n|Ultra Naté|Free: The Mood II...|1997|       Denmark| normal|Official|\n|Ultra Naté|           Rejoicing|1991|           USA| normal|Official|\n|Ultra Naté|        Found a Cure|1998|United Kingdom| normal|Official|\n|Ultra Naté| Situation: Critical|1998|United Kingdom| normal|Official|\n|Ultra Naté|                Free|1998|  South Africa| normal|Official|\n|Ultra Naté|       Joy / Show Me|1993|           USA| normal|Official|\n|Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|Ultra Naté|One Woman\u0027s Insanity|1993|           USA| normal|Official|\n|Ultra Naté|  Situation:Critical|1998|           USA| normal|Official|\n|Ultra Naté|              Desire|2000|       Germany| normal|Official|\n|Ultra Naté|New Kind of Medic...|1998|United Kingdom| normal|Official|\n|Ultra Naté|Blue Notes in the...|1991|           USA| normal|Official|\n|    Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|    Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n|    Object| The Reflecting Skin|  -1|       Unknown| normal|Official|\n+----------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\n+--------------------+--------------------+----+--------------+-------+--------+\n|              artist|               album|year|       country|quality|  status|\n+--------------------+--------------------+----+--------------+-------+--------+\n|          Ultra Naté|Stranger Than Fic...|2001|           USA| normal|Official|\n|          Ultra Naté|           Get It Up|2001|       Germany| normal|Official|\n|              Object|   The Ethane Asylum|2008|           USA| normal|Official|\n|              Object|  Part-Time Paranoia|2001|       Germany| normal|Official|\n|              Hayden|     In Field \u0026 Town|2008|        Canada| normal|Official|\n|              Hayden|   Elk-Lake Serenade|2004|        Canada| normal|Official|\n|              Hayden|            Us Alone|2013|           USA| normal|Official|\n|              Hayden|Skyscraper Nation...|2001|        Canada| normal|Official|\n|              Hayden|Live at Convocati...|2002|           USA| normal|Official|\n|              Hayden|            Hey Love|2015|        Canada| normal|Official|\n|              Hayden|The Place Where W...|2009|        Canada| normal|Official|\n|Get Cape. Wear Ca...|I-Spy / Call Me I...|2006|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Get Cape. Wear Ca...|2005|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|       Find the Time|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|   War of the Worlds|2006|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Searching for the...|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|Get Cape. Wear Ca...|2010|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|    Keep Singing Out|2008|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|                Maps|2012|United Kingdom| normal|Official|\n|Get Cape. Wear Ca...|The Chronicles of...|2006|United Kingdom| normal|Official|\n+--------------------+--------------------+----+--------------+-------+--------+\nonly showing top 20 rows\n\n+----+-----+\n|year|count|\n+----+-----+\n|1953|   34|\n|1957|  160|\n|1987| 1289|\n|1956|  134|\n|  -1| 5948|\n|1936|   11|\n|2012| 2121|\n| 200|    1|\n|1958|  152|\n|1943|    6|\n|1972|  496|\n|1931|    5|\n|1988| 1328|\n|1938|   11|\n|1926|    9|\n|1911|    1|\n|1918|    6|\n|1932|    2|\n|1977|  599|\n|2014| 1148|\n+----+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1497002665046_1755503564",
       "id": "20160114-180933_599744065",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:06:59 PM",
+      "dateFinished": "Jun 14, 2017 3:07:06 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "6 - SparkSQL on DataFrame 1",
-      "text": "df_albums.registerTempTable(\"spark_albums_table\")\n\nsqlContext.sql(\"SELECT * FROM spark_albums_table\").show",
-      "dateUpdated": "Jun 9, 2017 10:05:53 AM",
+      "title": "5 - SparkSQL on DataFrame",
+      "text": "df_albums.registerTempTable(\"spark_albums_table\")\n\nsqlContext.sql(\"SELECT * FROM spark_albums_table WHERE country\u003d\u0027Spain\u0027\").show",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:14:50 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -248,24 +214,38 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\nwarning: there was one deprecation warning; re-run with -deprecation for details\n+--------------------+--------------------+----+-------+-------+--------+\n|              artist|               album|year|country|quality|  status|\n+--------------------+--------------------+----+-------+-------+--------+\n|The Ladybug Trans...|Here Comes the Ra...|2006|  Spain| normal|Official|\n|               Queen|        Now I’m Here|1975|  Spain| normal|Official|\n|     Vladislav Delay|Recovery IDea Par...|2008|  Spain| normal|Official|\n|     Vladislav Delay|Recovery IDea Par...|2008|  Spain| normal|Official|\n|              Hefner| Canciones Huerfanas|1999|  Spain| normal|Official|\n|              Hefner|    The Hefner Heart|1999|  Spain| normal|Official|\n|          Clem Snide|  You Were a Diamond|2002|  Spain| normal|Official|\n|                Reik|        Es mejor así|2013|  Spain| normal|Official|\n|Aerolíneas Federales|  Quiero rock\u0027n\u0027roll|1990|  Spain| normal|Official|\n|Aerolíneas Federales|Mucho whisky y ro...|1989|  Spain| normal|Official|\n|Aerolíneas Federales|              Por ti|1987|  Spain| normal|Official|\n|Aerolíneas Federales|Aerolíneas federales|1986|  Spain| normal|Official|\n|Aerolíneas Federales|  Asesiné a mi novio|1991|  Spain| normal|Official|\n|Aerolíneas Federales|    Te echo de menos|1988|  Spain| normal|Official|\n|Aerolíneas Federales|      Tomando tierra|1988|  Spain| normal|Official|\n|Aerolíneas Federales|Tú al monte yo al...|1988|  Spain| normal|Official|\n|Aerolíneas Federales|      Soy un bollito|1988|  Spain| normal|Official|\n|Aerolíneas Federales|             Hop hop|1987|  Spain| normal|Official|\n|Aerolíneas Federales|  Oh qué pena me das|1987|  Spain| normal|Official|\n|Aerolíneas Federales|       Una o ninguna|1991|  Spain| normal|Official|\n+--------------------+--------------------+----+-------+-------+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665046_1755503564",
       "id": "20160114-002321_1001583714",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:14:50 PM",
+      "dateFinished": "Jun 14, 2017 3:14:51 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "7 - SparkSQL On DataFrame  2",
       "text": "%sql\nSELECT country,count(*) as nb FROM spark_albums_table group by country",
-      "dateUpdated": "Jun 9, 2017 10:05:51 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:04:56 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -293,26 +273,48 @@
           }
         },
         "enabled": true,
-        "results": {},
-        "editorSetting": {}
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "country\tnb\nSweden\t2323\nPhilippines\t8\nSingapore\t18\nMalaysia\t4\nTurkey\t617\nGermany\t9801\nJordan\t1\nFrance\t3462\nGreece\t132\nTaiwan\t159\nSlovakia\t71\nReunion\t1\nArgentina\t525\nBelgium\t763\nEcuador\t4\nFinland\t1970\nPeru\t15\nBenin\t1\nIndia\t87\nChina\t47\nBelarus\t1\nMalta\t1\nChile\t151\nPuerto Rico\t18\nCroatia\t51\nBolivia\t1\nNigeria\t2\nVirgin Islands\t6\nAndorra\t3\nGabon\t1\nUnknown\t14740\nItaly\t1637\nLithuania\t49\nNorway\t898\nSpain\t1352\nCuba\t10\nDenmark\t346\nBarbados\t3\nRussian Federation\t751\nIreland\t109\nLiechtenstein\t2\nThailand\t5\nMonaco\t1\nHong Kong\t59\nUkraine\t49\nVenezuela\t22\nIsrael\t94\nIceland\t66\nSaint-Barthelemy\t1\nUSA\t36217\nSouth Korea\t101\nCyprus\t1\nUruguay\t22\nMexico\t266\nAruba\t1\nEstonia\t207\nIndonesia\t5\nGuatemala\t2\nArmenia\t3\nSyria\t1\nTrinidad and Tobago\t1\nSaudi Arabia\t2\nSwitzerland\t209\nEthiopia\t1\nJamaica\t234\nLatvia\t42\nUnited Arab Emirates\t6\nCanada\t1813\nFaroe Islands\t4\nCzech Republic\t190\nBrazil\t889\nLebanon\t13\nSlovenia\t46\nDominican Republic\t1\nJapan\t6042\nLuxembourg\t10\nNew Zealand\t160\nUnited States Minor Outlying Islands\t4\nBosnia and Herzegovina\t6\nPoland\t1122\nPortugal\t217\nAustralia\t1556\nRomania\t97\nBulgaria\t34\nAustria\t318\nCosta Rica\t2\nEgypt\t6\nSerbia\t17\nSouth Africa\t48\nColombia\t32\nHungary\t55\nPakistan\t1\nUnited Kingdom\t20986\nMoldova\t2\nNetherlands\t1405\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665047_1755118816",
       "id": "20160114-002054_842505952",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 2:58:51 PM",
+      "dateFinished": "Jun 14, 2017 2:58:54 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "8 - Cassandra CQL : Create keyspace, help and describe keyspaces",
       "text": "%cassandra\n\nCREATE KEYSPACE IF NOT EXISTS ks_music \nWITH replication \u003d {\n\t\u0027class\u0027 : \u0027SimpleStrategy\u0027,\n\t\u0027replication_factor\u0027 : 1\n};\n\n//help;\n\n//describe keyspaces;\n\n//describe keyspace ks_music;",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:04:54 AM",
+      "dateUpdated": "Jun 14, 2017 3:12:39 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -348,8 +350,8 @@
       "jobName": "paragraph_1497002665047_1755118816",
       "id": "20160119-181849_56311459",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "dateStarted": "Jun 9, 2017 10:04:54 AM",
-      "dateFinished": "Jun 9, 2017 10:04:55 AM",
+      "dateStarted": "Jun 14, 2017 3:12:39 PM",
+      "dateFinished": "Jun 14, 2017 3:12:39 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -357,7 +359,7 @@
       "title": "9 - Cassandra CQL : Tables creation",
       "text": "%cassandra\n\nuse ks_music;\n\nDROP TABLE IF EXISTS albums;\n\nCREATE TABLE IF NOT EXISTS albums ( \n\tartist text,\n\talbum text,\n\tyear text,\n\tcountry text,\n\tquality text,\n\tstatus text,\n\tPRIMARY KEY (album) \n);\n\nDROP TABLE IF EXISTS nbalbums_by_year;\n\nCREATE TABLE IF NOT EXISTS nbalbums_by_year ( \n\tyear text,\n    nbalbums int,\n\tPRIMARY KEY (year)\n);\n\ndescribe table albums;",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:14:40 AM",
+      "dateUpdated": "Jun 14, 2017 3:14:25 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/undefined",
@@ -387,7 +389,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\n\n\u003cbr/\u003e\n\u003cbr/\u003e\n\u003cnav class\u003d\"navbar navbar-default\"\u003e\n    \u003cul class\u003d\"nav navbar-nav\"\u003e\n        \n        \u003cli\u003e\n            \u003ca\u003e\u003cstrong\u003eDESCRIBE TABLE albums;\u003c/strong\u003e\u003c/a\u003e\n        \u003c/li\u003e\n    \u003c/ul\u003e\n    \u003cul class\u003d\"nav navbar-nav navbar-right\"\u003e\n        \u003cli class\u003d\"dropdown\"\u003e\n            \u003ca class\u003d\"dropdown-toggle\" data-toggle\u003d\"dropdown\" role\u003d\"button\" aria-haspopup\u003d\"true\" aria-expanded\u003d\"false\"\u003e\n                \u003cstrong\u003eLegend\u003c/strong\u003e\n                \u003cspan class\u003d\"caret\"\u003e\u003c/span\u003e\n            \u003c/a\u003e\n            \u003cul class\u003d\"dropdown-menu\"\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-dashboard text-muted\" /\u003e\u0026nbsp;Cluster\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-folder-open text-danger\" /\u003e\u0026nbsp;\u0026nbsp;Keyspace\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-copyright-mark text-warning\" /\u003e\u0026nbsp;\u0026nbsp;UDT\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-th-list text-primary\" /\u003e\u0026nbsp;\u0026nbsp;Table\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-eye-open text-primary\" /\u003e\u0026nbsp;\u0026nbsp;Materialized View\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-random text-success\" /\u003e\u0026nbsp;\u0026nbsp;Function\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-retweet text-success\" /\u003e\u0026nbsp;\u0026nbsp;Aggregate\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli role\u003d\"separator\" class\u003d\"divider text-muted\"\u003e\u003c/li\u003e\n                \u003cli class\u003d\"dropdown-header\"\u003e\u003cspan class\u003d\"text-primary\"\u003eTable icons\u003c/span\u003e\u003c/li\u003e\n                \u003cli class\u003d\"bg-info\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-fullscreen\" /\u003e\u0026nbsp;\u0026nbsp;Partition Key\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-warning\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-pushpin\" /\u003e\u0026nbsp;\u0026nbsp;Static Column\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Column\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort-by-attributes\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Order ASC\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort-by-attributes-alt\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Order DESC\n                    \u003c/a\u003e\n                \u003c/li\u003e\n            \u003c/ul\u003e\n        \u003c/li\u003e\n        \u003cli\u003e\n            \u003ca href\u003d\"#\"\u003e\u003c/a\u003e\n        \u003c/li\u003e\n    \u003c/ul\u003e\n\u003c/nav\u003e\n\u003chr/\u003e\n\n\u003cdiv class\u003d\"row\"\u003e\n    \u003cdiv class\u003d\"col-md-2\"/\u003e\n    \u003cdiv class\u003d\"col-md-8 col-offset-md-2\"\u003e\n        \u003cdiv class\u003d\"panel panel-default table-responsive table-bordered\"\u003e\n            \u003ctable class\u003d\"table\"\u003e\n                \n                \u003ccaption\u003e\u003ch4 class\u003d\"text-primary\"\u003e\u003ci class\u003d\"glyphicon glyphicon-th-list\"/\u003e\u0026nbsp;albums\u003c/h4\u003e\u003c/caption\u003e\n                                \u003cthead\u003e\n                    \u003ctr\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eColumn Type\u003c/th\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eColumn Name\u003c/th\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eData Type\u003c/th\u003e\n                    \u003c/tr\u003e\n                \u003c/thead\u003e\n                \u003ctbody\u003e\n                                            \n\n                    \u003ctr class\u003d\"info\"\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\n                            \u003ci class\u003d\"glyphicon glyphicon-fullscreen\" title\u003d\"Partition Key\"/\u003e\n                        \u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003ealbum\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003eartist\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003ecountry\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003equality\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003estatus\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003eyear\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                            \n                \u003c/tbody\u003e\n            \u003c/table\u003e\n            \u003cdiv class\u003d\"panel-footer\"\u003e\n                \u003ca data-toggle\u003d\"collapse\" data-target\u003d\"#7531b170-4cfc-11e7-94f7-135c6229527c_asCQL\" class\u003d\"text-primary\"\u003e\n                    \u003cstrong\u003eAs CQL statement\u003c/strong\u003e\n                    \u003cspan class\u003d\"caret\"\u003e\u003c/span\u003e\n                \u003c/a\u003e\n                \u003cbr/\u003e\u003cbr/\u003e\n                \u003cdiv class\u003d\"collapse\" id\u003d\"7531b170-4cfc-11e7-94f7-135c6229527c_asCQL\"\u003e\n                    \u003cpre class\u003d\"well\"\u003eCREATE TABLE ks_music.albums (\n    album text,\n    artist text,\n    country text,\n    quality text,\n    status text,\n    year text,\n    PRIMARY KEY (album)\n) WITH read_repair_chance \u003d 0.0\n   AND dclocal_read_repair_chance \u003d 0.1\n   AND gc_grace_seconds \u003d 864000\n   AND bloom_filter_fp_chance \u003d 0.01\n   AND caching \u003d { \u0027keys\u0027 : \u0027ALL\u0027, \u0027rows_per_partition\u0027 : \u0027NONE\u0027 }\n   AND comment \u003d \u0027\u0027\n   AND compaction \u003d { \u0027class\u0027 : \u0027org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy\u0027 }\n   AND compression \u003d { \u0027sstable_compression\u0027 : \u0027org.apache.cassandra.io.compress.LZ4Compressor\u0027 }\n   AND default_time_to_live \u003d 0\n   AND speculative_retry \u003d \u002799.0PERCENTILE\u0027\n   AND min_index_interval \u003d 128\n   AND max_index_interval \u003d 2048;\u003c/pre\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n            \u003c/div\u003e\n    \u003cdiv class\u003d\"col-md-2\"\u003e\u003c/div\u003e\n\u003c/div\u003e"
+            "data": "\n\n\u003cbr/\u003e\n\u003cbr/\u003e\n\u003cnav class\u003d\"navbar navbar-default\"\u003e\n    \u003cul class\u003d\"nav navbar-nav\"\u003e\n        \n        \u003cli\u003e\n            \u003ca\u003e\u003cstrong\u003eDESCRIBE TABLE albums;\u003c/strong\u003e\u003c/a\u003e\n        \u003c/li\u003e\n    \u003c/ul\u003e\n    \u003cul class\u003d\"nav navbar-nav navbar-right\"\u003e\n        \u003cli class\u003d\"dropdown\"\u003e\n            \u003ca class\u003d\"dropdown-toggle\" data-toggle\u003d\"dropdown\" role\u003d\"button\" aria-haspopup\u003d\"true\" aria-expanded\u003d\"false\"\u003e\n                \u003cstrong\u003eLegend\u003c/strong\u003e\n                \u003cspan class\u003d\"caret\"\u003e\u003c/span\u003e\n            \u003c/a\u003e\n            \u003cul class\u003d\"dropdown-menu\"\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-dashboard text-muted\" /\u003e\u0026nbsp;Cluster\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-folder-open text-danger\" /\u003e\u0026nbsp;\u0026nbsp;Keyspace\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-copyright-mark text-warning\" /\u003e\u0026nbsp;\u0026nbsp;UDT\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-th-list text-primary\" /\u003e\u0026nbsp;\u0026nbsp;Table\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-eye-open text-primary\" /\u003e\u0026nbsp;\u0026nbsp;Materialized View\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-random text-success\" /\u003e\u0026nbsp;\u0026nbsp;Function\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-retweet text-success\" /\u003e\u0026nbsp;\u0026nbsp;Aggregate\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli role\u003d\"separator\" class\u003d\"divider text-muted\"\u003e\u003c/li\u003e\n                \u003cli class\u003d\"dropdown-header\"\u003e\u003cspan class\u003d\"text-primary\"\u003eTable icons\u003c/span\u003e\u003c/li\u003e\n                \u003cli class\u003d\"bg-info\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-fullscreen\" /\u003e\u0026nbsp;\u0026nbsp;Partition Key\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-warning\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-pushpin\" /\u003e\u0026nbsp;\u0026nbsp;Static Column\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Column\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort-by-attributes\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Order ASC\n                    \u003c/a\u003e\n                \u003c/li\u003e\n                \u003cli class\u003d\"bg-success\"\u003e\n                    \u003ca role\u003d\"button\"\u003e\n                        \u003ci class\u003d\"glyphicon glyphicon-sort-by-attributes-alt\" /\u003e\u0026nbsp;\u0026nbsp;Clustering Order DESC\n                    \u003c/a\u003e\n                \u003c/li\u003e\n            \u003c/ul\u003e\n        \u003c/li\u003e\n        \u003cli\u003e\n            \u003ca href\u003d\"#\"\u003e\u003c/a\u003e\n        \u003c/li\u003e\n    \u003c/ul\u003e\n\u003c/nav\u003e\n\u003chr/\u003e\n\n\u003cdiv class\u003d\"row\"\u003e\n    \u003cdiv class\u003d\"col-md-2\"/\u003e\n    \u003cdiv class\u003d\"col-md-8 col-offset-md-2\"\u003e\n        \u003cdiv class\u003d\"panel panel-default table-responsive table-bordered\"\u003e\n            \u003ctable class\u003d\"table\"\u003e\n                \n                \u003ccaption\u003e\u003ch4 class\u003d\"text-primary\"\u003e\u003ci class\u003d\"glyphicon glyphicon-th-list\"/\u003e\u0026nbsp;albums\u003c/h4\u003e\u003c/caption\u003e\n                                \u003cthead\u003e\n                    \u003ctr\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eColumn Type\u003c/th\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eColumn Name\u003c/th\u003e\n                        \u003cth class\u003d\"col-md-4\"\u003eData Type\u003c/th\u003e\n                    \u003c/tr\u003e\n                \u003c/thead\u003e\n                \u003ctbody\u003e\n                                            \n\n                    \u003ctr class\u003d\"info\"\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\n                            \u003ci class\u003d\"glyphicon glyphicon-fullscreen\" title\u003d\"Partition Key\"/\u003e\n                        \u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003ealbum\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003eartist\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003ecountry\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003equality\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003estatus\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                                                    \n                    \u003ctr\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003e\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003eyear\u003c/td\u003e\n                        \u003ctd class\u003d\"col-md-4\"\u003etext\u003c/td\u003e\n                    \u003c/tr\u003e\n                                            \n                \u003c/tbody\u003e\n            \u003c/table\u003e\n            \u003cdiv class\u003d\"panel-footer\"\u003e\n                \u003ca data-toggle\u003d\"collapse\" data-target\u003d\"#29718230-5114-11e7-a43b-0f2022bc64e3_asCQL\" class\u003d\"text-primary\"\u003e\n                    \u003cstrong\u003eAs CQL statement\u003c/strong\u003e\n                    \u003cspan class\u003d\"caret\"\u003e\u003c/span\u003e\n                \u003c/a\u003e\n                \u003cbr/\u003e\u003cbr/\u003e\n                \u003cdiv class\u003d\"collapse\" id\u003d\"29718230-5114-11e7-a43b-0f2022bc64e3_asCQL\"\u003e\n                    \u003cpre class\u003d\"well\"\u003eCREATE TABLE ks_music.albums (\n    album text,\n    artist text,\n    country text,\n    quality text,\n    status text,\n    year text,\n    PRIMARY KEY (album)\n) WITH read_repair_chance \u003d 0.0\n   AND dclocal_read_repair_chance \u003d 0.1\n   AND gc_grace_seconds \u003d 864000\n   AND bloom_filter_fp_chance \u003d 0.01\n   AND caching \u003d { \u0027keys\u0027 : \u0027ALL\u0027, \u0027rows_per_partition\u0027 : \u0027NONE\u0027 }\n   AND comment \u003d \u0027\u0027\n   AND compaction \u003d { \u0027class\u0027 : \u0027org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy\u0027 }\n   AND compression \u003d { \u0027sstable_compression\u0027 : \u0027org.apache.cassandra.io.compress.LZ4Compressor\u0027 }\n   AND default_time_to_live \u003d 0\n   AND speculative_retry \u003d \u002799.0PERCENTILE\u0027\n   AND min_index_interval \u003d 128\n   AND max_index_interval \u003d 2048;\u003c/pre\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n            \u003c/div\u003e\n    \u003cdiv class\u003d\"col-md-2\"\u003e\u003c/div\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -395,8 +397,8 @@
       "jobName": "paragraph_1497002665050_1753964569",
       "id": "20160113-181412_1134300065",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "dateStarted": "Jun 9, 2017 10:14:40 AM",
-      "dateFinished": "Jun 9, 2017 10:14:46 AM",
+      "dateStarted": "Jun 14, 2017 3:14:25 PM",
+      "dateFinished": "Jun 14, 2017 3:14:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -404,11 +406,11 @@
       "title": "10 - Cassandra CQL",
       "text": "%cassandra\nselect * from ks_music.albums limit 10;",
       "user": "anonymous",
-      "dateUpdated": "Jun 9, 2017 10:05:19 AM",
+      "dateUpdated": "Jun 14, 2017 3:07:20 PM",
       "config": {
         "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorMode": "ace/mode/undefined",
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -421,18 +423,20 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
-            "type": "TEXT",
-            "data": "com.datastax.driver.core.exceptions.InvalidQueryException: unconfigured table albums\n\tat com.datastax.driver.core.exceptions.InvalidQueryException.copy(InvalidQueryException.java:50)\n\tat com.datastax.driver.core.DriverThrowables.propagateCause(DriverThrowables.java:37)\n\tat com.datastax.driver.core.DefaultResultSetFuture.getUninterruptibly(DefaultResultSetFuture.java:245)\n\tat com.datastax.driver.core.AbstractSession.execute(AbstractSession.java:63)\n\tat org.apache.zeppelin.cassandra.EnhancedSession.execute(EnhancedSession.scala:200)\n\tat org.apache.zeppelin.cassandra.InterpreterLogic$$anonfun$8.apply(InterpreterLogic.scala:155)\n\tat org.apache.zeppelin.cassandra.InterpreterLogic$$anonfun$8.apply(InterpreterLogic.scala:155)\n\tat scala.collection.immutable.List.map(List.scala:273)\n\tat org.apache.zeppelin.cassandra.InterpreterLogic.interpret(InterpreterLogic.scala:155)\n\tat org.apache.zeppelin.cassandra.CassandraInterpreter.interpret(CassandraInterpreter.java:200)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:95)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:490)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:175)\n\tat org.apache.zeppelin.scheduler.ParallelScheduler$JobRunner.run(ParallelScheduler.java:162)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: com.datastax.driver.core.exceptions.InvalidQueryException: unconfigured table albums\n\tat com.datastax.driver.core.Responses$Error.asException(Responses.java:136)\n\tat com.datastax.driver.core.DefaultResultSetFuture.onSet(DefaultResultSetFuture.java:179)\n\tat com.datastax.driver.core.RequestHandler.setFinalResult(RequestHandler.java:177)\n\tat com.datastax.driver.core.RequestHandler.access$2500(RequestHandler.java:43)\n\tat com.datastax.driver.core.RequestHandler$SpeculativeExecution.setFinalResult(RequestHandler.java:792)\n\tat com.datastax.driver.core.RequestHandler$SpeculativeExecution.onSet(RequestHandler.java:611)\n\tat com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:1013)\n\tat com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:936)\n\tat io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:318)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:304)\n\tat io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:318)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:304)\n\tat io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:318)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:304)\n\tat io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:276)\n\tat io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:263)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:318)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:304)\n\tat io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)\n\tat io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)\n\tat io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)\n\tat io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112)\n\t... 1 more\n"
+            "type": "HTML",
+            "data": "\n\n\u003cdiv class\u003d\"container\"\u003e\n\u003cdiv class\u003d\"row text-center\"\u003e\n\u003ch4\u003eNo Result\u003c/h4\u003e\n\u003c/div\u003e\n\u003cbr/\u003e\n    \u003cdiv class\u003d\"row\"\u003e\n    \u003cdiv class\u003d\"col-md-3\"\u003e\u003c/div\u003e\n    \u003cdiv class\u003d\"col-md-6 col-offset-md-3 table-responsive table-bordered\"\u003e\n        \u003ctable class\u003d\"table\"\u003e\n            \u003ccaption\u003e\u003ch5\u003eLast query execution info\u003c/h5\u003e\u003c/caption\u003e\n            \u003cthead\u003e\n                \u003ctr\u003e\n                    \u003cth\u003eInfo\u003c/th\u003e\n                    \u003cth\u003eValue\u003c/th\u003e\n                \u003c/tr\u003e\n            \u003c/thead\u003e\n            \u003ctbody\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eStatement\u003c/td\u003e\n                    \u003ctd\u003eselect * from ks_music.albums limit 10;\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eAchieved Consistency\u003c/td\u003e\n                    \u003ctd\u003eN/A\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eTried Hosts\u003c/td\u003e\n                    \u003ctd\u003ecassandra172.18.0.2:9042\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eQueried Hosts\u003c/td\u003e\n                    \u003ctd\u003ecassandra172.18.0.2:9042\u003c/td\u003e\n                \u003c/tr\u003e\n                \u003ctr\u003e\n                    \u003ctd\u003eSchema In Agreement\u003c/td\u003e\n                    \u003ctd\u003etrue\u003c/td\u003e\n                \u003c/tr\u003e\n            \u003c/tbody\u003e\n        \u003c/table\u003e\n    \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -440,15 +444,16 @@
       "jobName": "paragraph_1497002665051_1753579820",
       "id": "20160123-172739_1656103366",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "dateStarted": "Jun 9, 2017 10:05:19 AM",
-      "dateFinished": "Jun 9, 2017 10:05:19 AM",
-      "status": "ERROR",
+      "dateStarted": "Jun 14, 2017 3:07:20 PM",
+      "dateFinished": "Jun 14, 2017 3:07:20 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "11 - Write Spark DataFrame in Cassandra 1",
       "text": "df_albums.write\n.format(\"org.apache.spark.sql.cassandra\")\n.option(\"header\",\"false\")\n.mode(\"append\")\n.options(Map( \"table\" -\u003e \"albums\", \"keyspace\" -\u003e \"ks_music\"))\n.save()",
-      "dateUpdated": "Jun 9, 2017 10:18:17 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:16:09 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -465,24 +470,33 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "jobName": "paragraph_1497002665052_1751656075",
       "id": "20160114-001131_987960956",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:16:09 PM",
+      "dateFinished": "Jun 14, 2017 3:16:38 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "12 - CQL Cassandra query",
       "text": "%cassandra\nselect * from ks_music.albums limit 10;",
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:13:42 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -520,28 +534,41 @@
             }
           }
         },
-        "enabled": true
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "album\tartist\tcountry\tquality\tstatus\tyear\nQuit My Baby / Be Careful With a Fool\tB.B. King\tUSA\tnormal\tOfficial\t1957\n今でもずっと\t伊藤由奈\tJapan\tnormal\tOfficial\t2009\nThe Impossible Dream EP\tCarter the Unstoppable Sex Machine\tUnited Kingdom\tnormal\tOfficial\t1992\nThe Way You Are\tTears for Fears\tUnited Kingdom\tnormal\tOfficial\t1983\nPrimitive\tAmbulance LTD\tUnited Kingdom\tnormal\tOfficial\t2003\nFàntèxī\t周杰倫\tTaiwan\tnormal\tPseudo-Release\t2001\nDestroying the Masses\tPhobia\tUnknown\tnormal\tOfficial\t-1\nIn the Mouth of the Young\tBullets and Octane\tUSA\tnormal\tOfficial\t2006\nLook Around the Corner\tAlice Russell\tUSA\tnormal\tOfficial\t2012\nView From the Ground\tAmerica\tUSA\tnormal\tOfficial\t1982\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665052_1751656075",
       "id": "20160123-172148_256698728",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:13:42 PM",
+      "dateFinished": "Jun 14, 2017 3:13:42 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "13 - Write Spark DataFrame In Cassandra 2",
       "text": "\nval df_nbalbyms_by_year \u003d sqlContext.sql(\"SELECT year,count(*) as nbalbums FROM spark_albums_table group by year\")\n\ndf_nbalbyms_by_year.show\n\ndf_nbalbyms_by_year.write\n.format(\"org.apache.spark.sql.cassandra\")\n.option(\"header\",\"false\")\n.mode(\"overwrite\")\n.options(Map( \"table\" -\u003e \"nbalbums_by_year\", \"keyspace\" -\u003e \"ks_music\"))\n.save()",
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:15:07 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -552,24 +579,40 @@
           "groups": [],
           "scatter": {}
         },
-        "enabled": true
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\ndf_nbalbyms_by_year: org.apache.spark.sql.DataFrame \u003d [year: string, nbalbums: bigint]\n+----+--------+\n|year|nbalbums|\n+----+--------+\n|1953|      34|\n|1957|     160|\n|1987|    1289|\n|1956|     134|\n|  -1|    5948|\n|1936|      11|\n|2012|    2121|\n| 200|       1|\n|1958|     152|\n|1943|       6|\n|1972|     496|\n|1931|       5|\n|1988|    1328|\n|1938|      11|\n|1926|       9|\n|1911|       1|\n|1918|       6|\n|1932|       2|\n|1977|     599|\n|2014|    1148|\n+----+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665052_1751656075",
       "id": "20160114-000651_1120689629",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:15:07 PM",
+      "dateFinished": "Jun 14, 2017 3:15:14 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "14 - Cassandra CQL query",
       "text": "%cassandra\nselect * from ks_music.nbalbums_by_year;",
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:15:16 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -602,28 +645,41 @@
             }
           }
         },
-        "enabled": true
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "year\tnbalbums\n1955\t65\n1964\t314\n1970\t448\n200\t1\n1934\t6\n1928\t6\n1956\t134\n1988\t1328\n1979\t733\n2011\t2586\n1974\t514\n1919\t4\n1987\t1289\n1991\t1863\n1982\t1048\n1935\t18\n2006\t6050\n2013\t1619\n1998\t3377\n2012\t2121\n1913\t1\n1950\t34\n1949\t35\n1914\t1\n1930\t8\n1960\t188\n1920\t4\n1918\t6\n1989\t1536\n1916\t1\n1997\t3203\n1927\t5\n1945\t24\n1984\t1018\n1944\t12\n1963\t228\n1958\t152\n2008\t4687\n1978\t736\n21\t1\n1983\t981\n1909\t1\n1980\t814\n1933\t9\n1968\t389\n1967\t377\n1992\t1929\n1926\t9\n1937\t16\n1014\t1\n1969\t394\n-1\t5948\n1929\t8\n10\t1\n1971\t417\n1936\t11\n1981\t854\n1985\t1006\n2001\t4328\n1976\t521\n1923\t4\n1993\t2275\n1912\t1\n1946\t20\n1922\t5\n2015\t191\n1965\t371\n2010\t3099\n2002\t4498\n208\t1\n1959\t188\n1954\t49\n1999\t3788\n1907\t2\n1975\t524\n2003\t4974\n1996\t2948\n1990\t1716\n1962\t189\n1921\t1\n1948\t22\n1947\t22\n2014\t1148\n1995\t2823\n1939\t10\n2004\t5414\n1994\t2478\n1972\t496\n2007\t5335\n1938\t11\n1942\t11\n1973\t527\n1917\t10\n1898\t3\n1951\t35\n1941\t16\n2009\t3762\n1911\t1\n1986\t1087\n1925\t6\n1953\t34\n1952\t33\n1957\t160\n1924\t18\n1943\t6\n1931\t5\n2005\t5819\n1906\t1\n1932\t2\n1966\t337\n1940\t15\n1977\t599\n2000\t4101\n1890\t63\n1961\t163\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665053_1751271327",
       "id": "20160114-001159_1878746586",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:15:16 PM",
+      "dateFinished": "Jun 14, 2017 3:15:16 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "15 - Spark DataFrame from Cassandra Table",
       "text": "val df_albums_cassandra \u003d sqlContext\n  .read\n  .format(\"org.apache.spark.sql.cassandra\")\n  .options(Map( \"table\" -\u003e \"albums\", \"keyspace\" -\u003e \"ks_music\" ))\n  .load()\n  \ndf_albums_cassandra.show\n",
-      "dateUpdated": "Jun 9, 2017 10:06:04 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:16:30 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -636,28 +692,42 @@
         },
         "enabled": true,
         "results": {},
-        "editorSetting": {}
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\ndf_albums_cassandra: org.apache.spark.sql.DataFrame \u003d [album: string, artist: string ... 4 more fields]\n+--------------------+------------------+-----------+-------+---------+----+\n|               album|            artist|    country|quality|   status|year|\n+--------------------+------------------+-----------+-------+---------+----+\n|Uudet kymmenen kä...|           Stam1na|    Germany| normal| Official|2006|\n|  The Kings of Disco|Dimitri From Paris|        USA| normal| Official|2004|\n|              Sabaku|        Zazen Boys|    Unknown| normal|  Bootleg|2013|\n|Live at Chassé Breda|            Racoon|Netherlands| normal| Official|2009|\n|           Prix Choc|  Étienne de Crécy|     France| normal| Official|1998|\n|    Aly Walk With Me|   The Raveonettes|    Denmark| normal| Official|2008|\n|     Live at the BBC|              Eloy|    Unknown| normal|  Bootleg|1983|\n|             I\u0027m Hip|   John Pizzarelli|      Japan| normal| Official|2002|\n|Saturday Night En...|     Broder Daniel|     Sweden| normal| Official|1995|\n|             Big Boy|     The Jackson 5|        USA| normal| Official|1968|\n|  Not in My Airforce|    Robert Pollard|        USA| normal| Official|1996|\n|   Dance Album of...|      Carl Perkins|        USA| normal| Official|1957|\n|     The Man‐Machine|         Kraftwerk|        USA| normal| Official|1978|\n|2006-03-01: Bruss...|      Two Gallants|    Belgium| normal|  Bootleg|2006|\n|     Burning Sosobra|           Floater|        USA| normal| Official|2000|\n|      Razzmatazz #05|         DJ Amable|      Spain| normal| Official|2005|\n|Blame It on My Youth|  Viktoria Tolstoy|     Sweden| normal| Official|2001|\n|Consequences of D...|            Velcra|    Finland| normal|Promotion|2002|\n|                  #7|     George Strait|        USA| normal| Official|1986|\n|             Ulisses|   Cristina Branco|Netherlands| normal| Official|2005|\n+--------------------+------------------+-----------+-------+---------+----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665053_1751271327",
       "id": "20160113-182535_1195558506",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:16:30 PM",
+      "dateFinished": "Jun 14, 2017 3:16:40 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "16 - SparkSQL table from Cassandra table",
       "text": "%sql\nCREATE TEMPORARY TABLE table_albums\nUSING org.apache.spark.sql.cassandra\nOPTIONS ( cluster \"Test Cluster\", keyspace \"ks_music\", table \"albums\", pushdown \"true\")",
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:17:24 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "table",
@@ -680,28 +750,53 @@
             }
           }
         },
-        "enabled": true
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": ""
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665053_1751271327",
       "id": "20160114-002507_1756327366",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:17:06 PM",
+      "dateFinished": "Jun 14, 2017 3:17:06 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "17 - SparkSQL query on Cassandra Data",
       "text": "%sql\nselect country, count(*) as count from table_albums group by country having count\u003e${albumCountThreshold\u003d1000} order by count",
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:29:45 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "graph": {
           "mode": "multiBarChart",
@@ -735,7 +830,12 @@
             }
           }
         },
-        "enabled": true
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {
@@ -749,20 +849,32 @@
           }
         }
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "country\tcount\nCanada\t1588\nFinland\t1820\nSweden\t2097\nFrance\t3011\nJapan\t5505\nGermany\t8522\nUnknown\t12828\nUnited Kingdom\t17974\nUSA\t31714\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1497002665054_1752425573",
       "id": "20160114-181331_1246292720",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Jun 14, 2017 3:29:45 PM",
+      "dateFinished": "Jun 14, 2017 3:29:47 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "dateUpdated": "Jun 9, 2017 10:04:25 AM",
+      "text": "%spark\r\nsqlContext.cacheTable(\"table_albums\")\r\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:25:08 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
-        "editorHide": true,
+        "editorHide": false,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -772,34 +884,122 @@
           "groups": [],
           "scatter": {}
         },
-        "enabled": true
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "jobName": "paragraph_1497002665054_1752425573",
       "id": "20160114-093455_823181330",
       "dateCreated": "Jun 9, 2017 10:04:25 AM",
+      "dateStarted": "Jun 14, 2017 3:25:08 PM",
+      "dateFinished": "Jun 14, 2017 3:25:09 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nsqlContext.uncacheTable(\"table_albums\")\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:26:33 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1497453908600_-1713917224",
+      "id": "20170614-152508_347787329",
+      "dateCreated": "Jun 14, 2017 3:25:08 PM",
+      "dateStarted": "Jun 14, 2017 3:26:33 PM",
+      "dateFinished": "Jun 14, 2017 3:26:34 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nsqlContext.setConf(\"spark.sql.shuffle.partitions\", \"3\")\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:29:39 PM",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1497453993859_593360633",
+      "id": "20170614-152633_434879090",
+      "dateCreated": "Jun 14, 2017 3:26:33 PM",
+      "dateStarted": "Jun 14, 2017 3:29:39 PM",
+      "dateFinished": "Jun 14, 2017 3:29:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "Jun 14, 2017 3:29:39 PM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1497454179808_1596460668",
+      "id": "20170614-152939_1021468885",
+      "dateCreated": "Jun 14, 2017 3:29:39 PM",
       "status": "READY",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
   "name": "Spark Cassandra",
   "id": "2CHUR4D21",
   "angularObjects": {
-    "2CHD3N6XP:shared_process": [],
-    "2CHXHJFU6:shared_process": [],
-    "2CK5F94SS:shared_process": [],
-    "2CJERHQTQ:shared_process": [],
-    "2CM9UPU1U:shared_process": [],
-    "2CJUP3PRB:shared_process": [],
-    "2CHDQBZ8C:shared_process": [],
-    "2CK1MPJQK:shared_process": [],
-    "2CJBA4UNV:shared_process": [],
-    "2CJUCKWCX:shared_process": []
+    "2CN1UVP7D:shared_process": [],
+    "2CN9VVPF1:shared_process": [],
+    "2CHJSDRH5:shared_process": [],
+    "2CK45U2D4:shared_process": [],
+    "2CM8V3G1P:shared_process": [],
+    "2CK1N3ABD:shared_process": [],
+    "2CM6N96C1:shared_process": [],
+    "2CJYV6H3Q:shared_process": [],
+    "2CKNB9JWC:shared_process": [],
+    "2CHV9DKVJ:shared_process": []
   },
   "config": {},
   "info": {}
